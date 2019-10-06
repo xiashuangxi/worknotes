@@ -2,6 +2,8 @@
 markdown: kramdown
 
 worknotes:
+  develop: pro # dev 开发环境，pro 生成环境
+  namespace: worknotes
   theme: default
   author: xiashuangxi
   email: xiashuangxi@hotmail.com

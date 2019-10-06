@@ -3,7 +3,7 @@
 <ul class="site-context-category">
         {% for notes in site.categories[page.category] %}
             <li>
-                <a href="{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
+                <a href="{{namespace}}/{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
                 <p>{{ notes.excerpt }}</p>
                 
             </li>
