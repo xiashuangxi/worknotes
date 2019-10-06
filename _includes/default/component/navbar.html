@@ -1,0 +1,34 @@
+<header class="site-header">
+    <div class="container-fulid">
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  header-min-h">
+            <a class="navbar-brand" href="/">Work Notes</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                {% for menu in site.data.Menu %}
+                    {% if menu.item %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ menu.name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                {% for menu_item in menu.item %}
+                                <a class="dropdown-item" href="{{ menu_item.url }}">{{ menu_item.name }}</a>
+                                {% endfor %}
+                            </div>
+                          </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ menu.url }}">{{ menu.name }}</a>
+                    </li>
+                    {% endif %}
+                    
+                {% endfor %}
+                </ul>
+            </div>
+        </nav>        
+    </div>
+</header> 

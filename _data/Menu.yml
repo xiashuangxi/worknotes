@@ -1,0 +1,26 @@
+- name: Java
+  url: /notes/category/Java
+
+- name: Spring
+  url: /notes/category/Spring
+
+- name: Go
+  url: /notes/category/Go
+
+- name: 算法
+  url: /notes/category/算法
+
+- name: 编程语言
+  item: 
+  - name: Ada
+    url: /notes/category/编程语言/Ada
+  - name: Python
+    url: /notes/category/编程语言/Python
+  - name: common lisp
+    url: /notes/category/编程语言/common lisp
+
+- name: 碎笔
+  url: /notes/category/碎笔
+
+- name: 面试问题
+  url: /notes/category/面试问题

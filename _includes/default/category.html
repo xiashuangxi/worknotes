@@ -1,0 +1,14 @@
+{% assign notes = site.categories[page.category] %}
+{% if notes %}
+<ul class="site-context-category">
+        {% for notes in site.categories[page.category] %}
+            <li>
+                <a href="{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
+                <p>{{ notes.excerpt }}</p>
+                
+            </li>
+        {% endfor %}
+        </ul>
+{% else %}
+<p>还没有添加任何文章。</p>
+{% endif %}

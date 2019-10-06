@@ -1,0 +1,13 @@
+<div class="site-main">
+    <h1>个人的工作笔记。这里可以找到Java、Spring、Go或Python等相关的笔记。</h1>
+    {% if site.data.MainItem %}
+    <ul class="site-main-list">
+        {% for item in site.data.MainItem %}
+        <li>
+            <span class="list-no">{{forloop.index}}</span>
+            <p>{{ item.context }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>

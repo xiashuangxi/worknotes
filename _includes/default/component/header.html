@@ -1,0 +1,30 @@
+<base href="/">
+<meta charset="utf-8">
+
+<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+
+<meta http-equiv="Content-Language" content="zh-cn">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+<meta name="description" content="{{ site.worknotes.description }}" />
+<meta name="keywords" content="{{ site.worknotes.keywords }}">
+<meta name="author" content="{{ site.worknotes.author }}">
+<meta name="google" content="nositelinkssearchbox" />
+
+<meta property="og:title" content="{% if page.title == nil %}Simple Food{% else %}{{page.title}}{% endif %}" />
+<meta property="og:url" content="{{site.website}}{{ page.url }}" />
+<meta property="og:image" content="{% if page.image == nil %}/assets/favicon/favicon.png{% else %}{{ page.image }}{% endif %}" />
+<meta property="og:description" content="{% if page.excerpt != nil %}{{ page.excerpt}} {% else %} {{ site.simple_food.description }}{% endif %}">
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@nytimesbits" />
+<meta name="twitter:creator" content="@nickbilton" />
+
+<link rel="shortcut icon" type="image/ico" href="/assets/favicon/favicon.ico" />
+<meta name="msvalidate.01" content="5369E33A969777C6DEEDF11A4B45CE5A" />
+<meta name="google-site-verification" content="3fgcxcUt1mLPMwubgCzeBfjtoP1A3ubCfYg8FT4C0Bs" />
+<title>
+    Work Notes
+</title>
+{% include {{ site.worknotes.theme}}/component/stylesheets.html %}
