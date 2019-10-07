@@ -2,8 +2,9 @@
     <div class="site-article-mate">
         <h1>{{ page.title }}</h1>
         <figcaption class="figure-caption">
-            by {{ site.worknotes.author }} | 日期: {{ page.date | date: '%m, %d, %Y' }} | 归档: {{ page.category }}
-            {{ page.date | date_to_string }}
+            by {{ site.worknotes.author }} | 日期: {{ page.date | date: '%m, %d, %Y' }} | 归档: 
+            <a href="/notes/category/{{ page.category }}">{{ page.category }}</a>
+           
         </figcaption>
     </div>
     <div class="site-article-content">{{ content }}</div>
