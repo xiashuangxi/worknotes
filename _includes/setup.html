@@ -1,7 +1,6 @@
 {% capture cache %}
     {% if site.worknotes.develop == 'dev' %}
         {% capture accets_path %}/assets/stylesheet/{{ site.worknotes.theme}}{% endcapture %}
-        {% capture namespace %}{% endcapture %}
     {% else %}
         {% capture accets_path %}/{{ site.worknotes.namespace }}/assets/stylesheet/{{ site.worknotes.theme}}{% endcapture %}
         {% capture namespace %}{{ site.worknotes.namespace }}{% endcapture %}

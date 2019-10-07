@@ -16,7 +16,7 @@
 <meta property="og:title" content="{% if page.title == nil %}Simple Food{% else %}{{page.title}}{% endif %}" />
 <meta property="og:url" content="{{site.website}}{{ page.url }}" />
 <meta property="og:image" content="{% if page.image == nil %}/assets/favicon/favicon.png{% else %}{{ page.image }}{% endif %}" />
-<meta property="og:description" content="{% if page.excerpt != nil %}{{ page.excerpt}} {% else %} {{ site.simple_food.description }}{% endif %}">
+<meta property="og:description" content="{% if page.excerpt != nil %}{{ page.excerpt | strip_html}} {% else %} {{ site.simple_food.description }}{% endif %}">
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:site" content="@nytimesbits" />
 <meta name="twitter:creator" content="@nickbilton" />

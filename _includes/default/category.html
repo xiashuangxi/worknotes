@@ -1,9 +1,11 @@
+{% include setup.html %}
+
 {% assign notes = site.categories[page.category] %}
 {% if notes %}
 <ul class="site-context-category">
         {% for notes in site.categories[page.category] %}
             <li>
-                <a href="{{namespace}}/{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
+                <a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
                 <p>{{ notes.excerpt }}</p>
                 
             </li>

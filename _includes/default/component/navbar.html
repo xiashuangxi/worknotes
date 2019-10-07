@@ -16,13 +16,13 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 {% for menu_item in menu.item %}
-                                <a class="dropdown-item" href="{{namespace}}/{{ menu_item.url }}">{{ menu_item.name }}</a>
+                                <a class="dropdown-item" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu_item.url }}">{{ menu_item.name }}</a>
                                 {% endfor %}
                             </div>
                           </li>
                     {% else %}
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{namespace}}/{{ menu.url }}">{{ menu.name }}</a>
+                        <a class="nav-link" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a>
                     </li>
                     {% endif %}
                     
