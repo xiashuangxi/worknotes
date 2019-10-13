@@ -1,3 +1,4 @@
+{% include setup.html %}
 <div class="site-article">
     <div class="site-article-mate">
         <h1>{{ page.title }}</h1>
@@ -9,7 +10,7 @@
             {% if page.tags %}
             {% for tag in page.tags %}
             <li class="tags-item">
-                <a href="/{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
+                <a href="{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
             </li>
             {% endfor %}
             {% endif %}
