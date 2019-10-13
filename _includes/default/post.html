@@ -9,7 +9,7 @@
             {% if page.tags %}
             {% for tag in page.tags %}
             <li class="tags-item">
-                <a href="/notes/tag/{{ tag }}">{{ tag }}</a>
+                <a href="/{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
             </li>
             {% endfor %}
             {% endif %}
