@@ -5,9 +5,12 @@
         {% include {{ site.worknotes.theme }}/component/header.html %}
     </head>
     <body class="site-container">
+        
         {% include {{ site.worknotes.theme }}/component/navbar.html %}
-        <div class="container site-context p-lr">{{ content }}</div>
-        {% include {{ site.worknotes.theme }}/component/footer.html %}    
+        <div class="container ">
+            <div class=" site-context p-lr">{{ content }}</div>
+            {% include {{ site.worknotes.theme }}/component/footer.html %}    
+        </div>
     </body>
     {% include {{ site.worknotes.theme }}/component/scripts.html %}
 </html>

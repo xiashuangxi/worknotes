@@ -128,3 +128,11 @@ footer{
     text-align: center;
     padding-bottom: 20px;
 }
+
+
+@media (max-width: 991.98px){
+    .p-lr{
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+}
