@@ -2,7 +2,7 @@
 markdown: kramdown
 
 worknotes:
-  develop: dev # dev 开发环境，pro 生成环境
+  develop: pro # dev 开发环境，pro 生成环境
   slogan: 慎终如始无败事
   namespace: worknotes
   theme: default
