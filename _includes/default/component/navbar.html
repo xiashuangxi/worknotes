@@ -1,41 +1,22 @@
-<header class="site-header">
-    <div class="container-fulid">
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light  header-min-h">
-            <a class="navbar-brand" href="/{{namespace}}">
-                Work Notes
-                <!-- <img src="{{accets_path}}/favicon/favicon.jpg"/> -->
-                <!-- <embed height="15" style="
-                padding: 0 10px;
-                " src="{{accets_path}}/favicon/favicon.svg" type="image/svg+xml" /> -->
-
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                {% for menu in site.data.Menu %}
-                    {% if menu.item %}
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ menu.name }}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                {% for menu_item in menu.item %}
-                                <a class="dropdown-item" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu_item.url }}">{{ menu_item.name }}</a>
-                                {% endfor %}
-                            </div>
-                          </li>
-                    {% else %}
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a>
-                    </li>
-                    {% endif %}
-                    
-                {% endfor %}
-                </ul>
+<div id="header-container">
+    <header id="header-compact-v1" class="should-stick">
+        <div class="header-inner">
+            <a href="/{{namespace}}" title="Work Notes" class="site-logo">Work Notes</a>
+            <div class="site-nav-container">
+                <nav class="site-nav site-nav-original" >
+                    <ul>
+                        {% for menu in site.data.Menu %}
+                            {% if menu.item %}
+                                <li site-action="drop-menu">
+                                    <a  href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a>
+                                </li>
+                            {% else %}
+                                <li><a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </nav>
             </div>
-        </nav>        
-    </div>
-</header> 
+        </div>
+    </header>
+</div>

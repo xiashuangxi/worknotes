@@ -1,13 +1,19 @@
-<div class="site-main">
-    <h1>个人的工作笔记。这里可以找到Java、Spring、Go或Python等相关的笔记。</h1>
-    {% if site.data.MainItem %}
-    <ul class="site-main-list">
-        {% for item in site.data.MainItem %}
-        <li>
-            <span class="list-no">{{forloop.index}}</span>
-            <p>{{ item.context }}</p>
-        </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+<div id="main">
+    <div id="react-root">
+        <div class="channel-featured">
+            <div class="widgets-container">
+                <div class="widgets-article-count">
+                    <div class="article-count-mate">到目前为此一共发表了
+                        <span class="article-count-num">{{ site.posts.size }}</span>
+                        篇文章
+                    </div>
+                </div>
+                <div class="widgets-slogan">
+                    <div class="widgets-slogan-mate">
+                        <p>{{ site.worknotes.slogan }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

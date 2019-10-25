@@ -1,21 +1,30 @@
 {% include setup.html %}
-<div class="site-article">
-    <div class="site-article-mate">
-        <h1>{{ page.title }}</h1>
-        <div class="site-article-mate-info">
-        <figcaption class="figure-caption">
-            by {{ site.worknotes.author }} | 日期: {{ page.date | date: '%m, %d, %Y' }} | 归档: 
-        </figcaption>
-        <ul class="tags">
-            {% if page.tags %}
-            {% for tag in page.tags %}
-            <li class="tags-item">
-                <a href="{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
-            </li>
-            {% endfor %}
-            {% endif %}
-        </ul>
+
+<div class="layout-vertical">
+    <div class="article-header">
+        <div class="chapter-header">
+            <h1>{{ page.title }}</h1>
+            <div class="meta-info">
+                    <figcaption class="figure-caption">
+                            by {{ site.worknotes.author }} | 日期: {{ page.date | date: '%m, %d, %Y' }} | 归档:
+                    </figcaption>
+                    <ul class="tags">
+                        {% if page.tags %}
+                        {% for tag in page.tags %}
+                        <li class="tags-item">
+                            <a href="{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
+                        </li>
+                        {% endfor %}
+                        {% endif %}
+                    </ul>
+            </div>
         </div>
     </div>
-    <div class="site-article-content">{{ content }}</div>
+    <div class="article">
+        <div class="inner">
+                <div class="page">
+                    <div class="content">{{ content }}</div>
+                </div>
+        </div>
+    </div>
 </div>

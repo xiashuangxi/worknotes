@@ -1,0 +1,110 @@
+------------------------ navbar --------------------------
+<!-- <header class="site-header">
+    <div class="container-fulid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light  header-min-h">
+            <a class="navbar-brand" href="/{{namespace}}">
+                Work Notes
+
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                {% for menu in site.data.Menu %}
+                    {% if menu.item %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ menu.name }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                {% for menu_item in menu.item %}
+                                <a class="dropdown-item" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu_item.url }}">{{ menu_item.name }}</a>
+                                {% endfor %}
+                            </div>
+                          </li>
+                    {% else %}
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a>
+                    </li>
+                    {% endif %}
+                    
+                {% endfor %}
+                </ul>
+            </div>
+        </nav>        
+    </div>
+</header>  
+
+nav>
+        <a href="/{{namespace}}">Work Notes</a>
+        <button></button>
+        <div>
+            <ul>
+                {% for menu in site.data.Menu %}
+                    {% if menu.item %}
+                        <li>{{ menu.name }}</li>
+                    {% else %}
+                        <li>{{ menu.name }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>-->
+--------------------- endnavbar --------------------------
+
+-----------------------main------------------------------
+<!-- <div class="site-main">
+    <h1>个人的工作笔记。这里可以找到Java、Spring、Go或Python等相关的笔记。</h1>
+    {% if site.data.MainItem %}
+    <ul class="site-main-list">
+        {% for item in site.data.MainItem %}
+        <li>
+            <span class="list-no">{{forloop.index}}</span>
+            <p>{{ item.context }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div> -->
+----------------------end main --------------------------
+---------------------- category --------------------------
+<!--
+    {% assign notes = site.categories[page.category] %}
+{% if notes %} <ul class="site-context-category">
+    {% for notes in site.categories[page.category] %}
+        <li>
+            <a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
+            <p>{{ notes.excerpt }}</p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% else %}
+<p>还没有添加任何文章。</p>
+{% endif %} -->
+----------------------end category --------------------------
+
+----------------------post --------------------------
+
+<div class="site-article">
+    <div class="site-article-mate">
+        <h1>{{ page.title }}</h1>
+        <div class="site-article-mate-info">
+        <figcaption class="figure-caption">
+            by {{ site.worknotes.author }} | 日期: {{ page.date | date: '%m, %d, %Y' }} | 归档: 
+        </figcaption>
+        <ul class="tags">
+            {% if page.tags %}
+            {% for tag in page.tags %}
+            <li class="tags-item">
+                <a href="{{namespace}}/notes/tag/{{ tag }}">{{ tag }}</a>
+            </li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+        </div>
+    </div>
+    <div class="site-article-content">{{ content }}</div>
+</div>
+----------------------end post --------------------------

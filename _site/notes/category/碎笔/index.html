@@ -12,7 +12,7 @@
 
 <meta name="description" content="个人的工作笔记。这里可以找到Java、Spring、Go或Python等相关的笔记。" />
 <meta name="keywords" content="java,spring,go,python,ada,common lisp,面试,算法">
-<meta name="author" content="xiashuangxi">
+<meta name="author" content="Xia Shuangxi">
 <meta name="google" content="nositelinkssearchbox" />
 
 <meta property="og:title" content="Simple Food" />
@@ -36,106 +36,97 @@
 <!-- custom -->
 <link rel="stylesheet" href="/assets/stylesheet/default/main.css" />
 <!-- end custom -->
+<!-- bootstrup script -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- end bootstrup script -->
+<script src="/assets/scripts/default/main.js" ></script>
     </head>
-    <body class="site-container">
-        
-        <header class="site-header">
-    <div class="container-fulid">
-        
-        <nav class="navbar navbar-expand-lg navbar-light bg-light  header-min-h">
-            <a class="navbar-brand" href="/">
-                Work Notes
-                <!-- <img src="/assets/favicon/favicon.jpg"/> -->
-                <!-- <embed height="15" style="
-                padding: 0 10px;
-                " src="/assets/favicon/favicon.svg" type="image/svg+xml" /> -->
-
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/Java">Java</a>
-                    </li>
-                    
-                    
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/Spring">Spring</a>
-                    </li>
-                    
-                    
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/Go">Go</a>
-                    </li>
-                    
-                    
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/算法">算法</a>
-                    </li>
-                    
-                    
-                
-                    
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                编程语言
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                
-                                <a class="dropdown-item" href="/notes/category/编程语言/Ada">Ada</a>
-                                
-                                <a class="dropdown-item" href="/notes/category/编程语言/Python">Python</a>
-                                
-                                <a class="dropdown-item" href="/notes/category/编程语言/common lisp">common lisp</a>
-                                
-                            </div>
-                          </li>
-                    
-                    
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/碎笔">碎笔</a>
-                    </li>
-                    
-                    
-                
-                    
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/notes/category/面试问题">面试问题</a>
-                    </li>
-                    
-                    
-                
-                </ul>
+    <body>
+        <div class="wrapper">
+            <div id="header-container">
+    <header id="header-compact-v1" class="should-stick">
+        <div class="header-inner">
+            <a href="/" title="Work Notes" class="site-logo">Work Notes</a>
+            <div class="site-nav-container">
+                <nav class="site-nav site-nav-original" >
+                    <ul>
+                        
+                            
+                                <li><a href="/notes/category/Java">Java</a></li>
+                            
+                        
+                            
+                                <li><a href="/notes/category/Spring">Spring</a></li>
+                            
+                        
+                            
+                                <li><a href="/notes/category/Go">Go</a></li>
+                            
+                        
+                            
+                                <li><a href="/notes/category/算法">算法</a></li>
+                            
+                        
+                            
+                                <li site-action="drop-menu">
+                                    <a  href="">编程语言</a>
+                                </li>
+                            
+                        
+                            
+                                <li><a href="/notes/category/碎笔">碎笔</a></li>
+                            
+                        
+                            
+                                <li><a href="/notes/category/面试问题">面试问题</a></li>
+                            
+                        
+                    </ul>
+                </nav>
             </div>
-        </nav>        
-    </div>
-</header> 
-        <div class="container ">
-            <div class=" site-context p-lr">
-<ul class="site-context-category">
-    
-        <li>
-            <a href="/notes/category/碎笔/单例模式"><h2>单例模式</h2></a>
-            <p><p>单例模式作为java中最常用的设计模式之一，他是一种设计的解决方案。应用程序希望在任何情况下一个类只有一个实例。</p>
-
-</p>
-        </li>
-    
-</ul>
+        </div>
+    </header>
 </div>
-            <footer><p>Copyright (C) 2019 · xiashuangxi@hotmail.com · All Rights Reserved.</p></footer>    
+            
+<div id="main">
+    <div id="react-root">
+        
+        <div class="detail-section">
+            <div class="section-inner-container">
+                <ol class="detail">
+                
+                    <li class="item">
+                        <div class="works-item-container">
+                            <div class="works-item">
+                                <div class="inner">
+                                    <div class="info">
+                                        <h4 class="title">
+                                            <a class="title-container" href="/notes/category/碎笔/单例模式">单例模式</a>
+                                        </h4>
+                                        <div class="author">Xia Shuangxi</div>
+                                        <div class="intro">单例模式作为java中最常用的设计模式之一，他是一种设计的解决方案。应用程序希望在任何情况下一个类只有一个实例。
+
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                
+                </ol>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+            <footer id="footer-compact">
+    <div class="inner">
+        <div class="copyright">Copyright (C) 2019 · XIASHUANGXI@HOTMAIL · All Rights Reserved.</div>
+    </div>
+</footer>    
         </div>
     </body>
     <!-- bootstrup script -->
@@ -143,5 +134,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <!-- end bootstrup script -->
-
+<script src="/assets/scripts/default/main.js" ></script>
 </html>

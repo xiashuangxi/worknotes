@@ -1,15 +1,40 @@
 {% include setup.html %}
-
 {% assign notes = site.categories[page.category] %}
-{% if notes %}
-<ul class="site-context-category">
-    {% for notes in site.categories[page.category] %}
-        <li>
-            <a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ notes.url }}"><h2>{{ notes.title }}</h2></a>
-            <p>{{ notes.excerpt }}</p>
-        </li>
-    {% endfor %}
-</ul>
-{% else %}
-<p>还没有添加任何文章。</p>
-{% endif %}
+
+<div id="main">
+    <div id="react-root">
+        {% if notes %}
+        <div class="detail-section">
+            <div class="section-inner-container">
+                <ol class="detail">
+                {% for note in site.categories[page.category] %}
+                    <li class="item">
+                        <div class="works-item-container">
+                            <div class="works-item">
+                                <div class="inner">
+                                    <div class="info">
+                                        <h4 class="title">
+                                            <a class="title-container" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ note.url }}">{{ note.title }}</a>
+                                        </h4>
+                                        <div class="author">{{ site.worknotes.author }}</div>
+                                        <div class="intro">{{ note.excerpt |  strip_html}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {% endfor %}
+                </ol>
+            </div>
+        </div>
+        {% else %}
+        <div class="detail-section">
+            <div class="section-inner-container">
+                    <p>还没有添加任何文章。</p>
+            </div>
+        </div>
+
+       
+        {% endif %}
+    </div>
+</div>
