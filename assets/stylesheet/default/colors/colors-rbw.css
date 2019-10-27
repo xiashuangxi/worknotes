@@ -1,0 +1,21 @@
+:root{
+    --red: #bf0c34;
+    --black: #000;
+    --white: #fff;
+
+    --selection-bg-color: var(--red);
+    --selection-text-color: var(--white);
+
+    --article-text-color: var(--black);
+    --article-text-bg-color: var(--white);
+
+    --nav-bg-color: var(--red);
+    --nav-text-color: var(--white);
+
+    --nav-drop-menu-bg-color: var(--red);
+    --nav-drop-menu-text-color: var(--white);
+    --nav-drop-menu-bg-hover-color: var(--black);
+
+
+    --link-hover-text-color: var(--red);
+}

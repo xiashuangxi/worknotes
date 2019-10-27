@@ -1,7 +1,20 @@
 <!-- bootstrup stylesheet -->
+{% if site.worknotes.develop == 'dev' %}
+<link rel="stylesheet" href="{{accets_path}}/stylesheet/lib/bootstrap.min.css" crossorigin="anonymous">
+{% else %}
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+{% endif %}
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <!-- end bootstrup stylesheet -->
 
 <!-- custom -->
 <link rel="stylesheet" href="{{accets_path}}/stylesheet/{{ site.worknotes.theme}}/main.css" />
+
+{% if site.worknotes.colors =='' %}
+    <link rel="stylesheet" href="{{accets_path}}/stylesheet/{{ site.worknotes.theme}}/colors/default.css" />
+{% else %}
+    <link rel="stylesheet" href="{{accets_path}}/stylesheet/{{ site.worknotes.theme}}/colors/{{site.worknotes.colors}}.css" />
+{% endif %}
+
+
 <!-- end custom -->

@@ -30,39 +30,40 @@
     Work Notes
 </title>
 <!-- bootstrup stylesheet -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<link rel="stylesheet" href="/assets/stylesheet/lib/bootstrap.min.css" crossorigin="anonymous">
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <!-- end bootstrup stylesheet -->
 
 <!-- custom -->
 <link rel="stylesheet" href="/assets/stylesheet/default/main.css" />
+
+
+    <link rel="stylesheet" href="/assets/stylesheet/default/colors/colors-rbw.css" />
+
+
+
 <!-- end custom -->
-<!-- bootstrup script -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<!-- end bootstrup script -->
-<script src="/assets/scripts/default/main.js" ></script>
+
+
     </head>
     <body>
         <div class="wrapper">
             <div id="header-container">
     <header id="header-compact-v1" class="should-stick">
         <div class="header-inner">
-            <a href="/" title="Work Notes" class="site-logo">Work Notes</a>
+            <a href="/" title="Work Notes" class="site-logo">
+                <!-- <img src="/assets/favicon/favicon.png"/> -->
+                <div style="padding-right: 2px; font-size: 18px; color: var(--black); font-weight: 900;">Work</div>
+                <div style="padding-left: 2px; font-size: 18px; color: var(--white); font-weight: 900;">Notes</div>
+            </a>
             <div class="site-nav-container">
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         
                             
-                                <li><a href="/notes/category/Java">Java</a></li>
-                            
-                        
-                            
                                 <li><a href="/notes/category/Spring">Spring</a></li>
-                            
-                        
-                            
-                                <li><a href="/notes/category/Go">Go</a></li>
                             
                         
                             
@@ -70,8 +71,32 @@
                             
                         
                             
-                                <li site-action="drop-menu">
-                                    <a  href="">编程语言</a>
+                                <li class="drop-menu">
+                                    <a  href="#" id="drop-menu-action" dropmanuitem="drop-menu" dropmanuid="drop-menu-action">编程语言</a>
+
+                                    <div class=" show drop-menu-container " id="drop-menu">
+                                        
+                                        <a class="drop-menu-item" style="height: auto;" href="/notes/category/编程语言/Java">
+                                            <span>Java<span>
+                                        </a>
+                                        
+                                        <a class="drop-menu-item" style="height: auto;" href="/notes/category/编程语言/Ada">
+                                            <span>Ada<span>
+                                        </a>
+                                        
+                                        <a class="drop-menu-item" style="height: auto;" href="/notes/category/编程语言/Go">
+                                            <span>Go<span>
+                                        </a>
+                                        
+                                        <a class="drop-menu-item" style="height: auto;" href="/notes/category/编程语言/Python">
+                                            <span>Python<span>
+                                        </a>
+                                        
+                                        <a class="drop-menu-item" style="height: auto;" href="/notes/category/编程语言/Common-lisp">
+                                            <span>common lisp<span>
+                                        </a>
+                                        
+                                    </div>
                                 </li>
                             
                         
@@ -86,6 +111,23 @@
                     </ul>
                 </nav>
             </div>
+            <a href="/" title="Work Notes" class="site-search-logo" id="drop-search-action" dropsearchitem="drop-search-item" dropsearchid="drop-search-action">
+                <!-- <img src="/assets/favicon/favicon.png"/> -->
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 14 14" class="fill-current-color"><path fill="#fff" d="M14 12.83l-2.19-2.19a6.61 6.61 0 10-1.17 1.17L12.83 14zM2.5 10.7a5.8 5.8 0 018.2-8.2 5.8 5.8 0 01-8.2 8.2z"></path></svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="site-nav-search-container" id="drop-search-item">
+            <div class="search-inner">
+                <div class="search-content" >
+                    <input type="text">
+                </div>
+                <div class="search-btn" >
+                    <button>查找</button>
+                </div>
+            </div>
         </div>
     </header>
 </div>
@@ -94,9 +136,8 @@
         <div class="channel-featured">
             <div class="widgets-container">
                 <div class="widgets-article-count">
-                    <div class="article-count-mate">到目前为此一共发表了
-                        <span class="article-count-num">2</span>
-                        篇文章
+                    <div class="article-count-mate">至今共发布
+                        <span class="article-count-num">5</span>篇文章
                     </div>
                 </div>
                 <div class="widgets-slogan">
@@ -118,9 +159,12 @@
         </div>
     </body>
     <!-- bootstrup script -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<script src="/assets/scripts/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/popper.min.js"  crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/bootstrap.min.js" crossorigin="anonymous"></script>
+
+
 <!-- end bootstrup script -->
 <script src="/assets/scripts/default/main.js" ></script>
 </html>
