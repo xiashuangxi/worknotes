@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Sprint Cloud Eureka 服务注册与发现
-category: Spring
+category: [Spring,微服务]
 tag: [微服务]
 permalink: /notes/category/Spring/Sprint-Cloud-Eureka-服务注册与发现
 ---

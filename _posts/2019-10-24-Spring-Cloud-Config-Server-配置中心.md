@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Spring Cloud Config 配置中心
-category: Spring
+category: [Spring,微服务]
 tag: [微服务]
 permalink: /notes/category/Spring/Spring-Cloud-Config-配置中心
 ---
