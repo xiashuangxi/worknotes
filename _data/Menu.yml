@@ -1,12 +1,27 @@
 - name: 微服务
   url: /notes/category/微服务/
+
 - name: Spring
   url: /notes/category/Spring
+
+- name: Redis
+  url: /notes/category/Redis
+
+- name: 消息队列
+  url: /notes/category/消息队列
+  item: 
+  - name: kafka
+    url: /notes/category/消息队列/kafka
+  - name: RabbitMQ
+    url: /notes/category/消息队列/RabbitMQ
+  - name: RocketMQ
+    url: /notes/category/消息队列/RocketMQ
 
 - name: 算法
   url: /notes/category/算法
 
 - name: 编程语言
+  url: /notes/category/编程语言
   item: 
   - name: Java
     url: /notes/category/编程语言/Java

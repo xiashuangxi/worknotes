@@ -1,5 +1,6 @@
 :root {
     --header-height: 50px;
+    --sub-menu: 40px;
 }
 ::selection {
     background-color:var(--selection-bg-color);
@@ -208,6 +209,25 @@ a:hover{
 
 #header-compact-v1 .site-nav.site-nav-original a{
     padding: 0 10px;
+}
+
+#header-compact-v1 .site-nav-container-submenu{
+    display: flex;
+    flex-flow: column;
+    background-color: white;
+    max-height: var(--sub-menu);
+    height: var(--sub-menu);
+}
+
+#header-compact-v1 .site-nav-container-submenu ul{
+    list-style: none;
+    padding: 8px 4px;
+    display: flex;
+}
+#header-compact-v1 .site-nav-container-submenu ul li{
+    font-size: 13px;
+    color: black;
+    padding: 0 4px;
 }
 
 .site-nav .drop-menu{

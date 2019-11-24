@@ -1,4 +1,7 @@
-<div id="header-container">
+{% assign menuobj = site.data.Menu  | where: 'name' ,page.category %}
+{% assign menuobj = menuobj[0] %}
+
+<div id="header-container"  {% if menuobj.item %} style="height: calc(var(--header-height) + var(--sub-menu))" {% endif %} >
     <header id="header-compact-v1" class="should-stick">
         <div class="header-inner">
             <a href="/{{namespace}}" title="Work Notes" class="site-logo">
@@ -10,21 +13,7 @@
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         {% for menu in site.data.Menu %}
-                            {% if menu.item %}
-                                <li class="drop-menu">
-                                    <a  href="#" id="drop-menu-action" dropmanuitem="drop-menu" dropmanuid="drop-menu-action">{{ menu.name }}</a>
-
-                                    <div class=" show drop-menu-container " id="drop-menu">
-                                        {% for mi in menu.item %}
-                                        <a class="drop-menu-item" style="height: auto;" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ mi.url }}">
-                                            <span>{{ mi.name }}<span>
-                                        </a>
-                                        {% endfor %}
-                                    </div>
-                                </li>
-                            {% else %}
-                                <li><a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li>
-                            {% endif %}
+                            <li><a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -36,6 +25,18 @@
                 </div>
             </a>
         </div>
+
+            
+
+            {% if menuobj.item %}
+            <div class="site-nav-container-submenu">
+                <ul>
+                    {% for menu in menuobj.item %}
+                    <li><a href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li> 
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
 
         <div class="site-nav-search-container" id="drop-search-item">
             <div class="search-inner">
