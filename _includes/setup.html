@@ -1,8 +1,8 @@
 {% capture cache %}
-    {% if site.worknotes.develop == 'dev' %}
+    {% if site.data.application.worknotes.develop == 'dev' %}
         {% capture accets_path %}/assets{% endcapture %}
     {% else %}
-        {% capture accets_path %}/{{ site.worknotes.namespace }}/assets{% endcapture %}
-        {% capture namespace %}{{ site.worknotes.namespace }}{% endcapture %}
+        {% capture accets_path %}/{{ site.data.application.worknotes.namespace }}/assets{% endcapture %}
+        {% capture namespace %}{{ site.data.application.worknotes.namespace }}{% endcapture %}
     {% endif %}
 {% endcapture %}{% assign cache = nil %}

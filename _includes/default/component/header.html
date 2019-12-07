@@ -11,7 +11,7 @@
 <meta name="author" content="{{ site.worknotes.author }}">
 <meta name="google" content="nositelinkssearchbox" />
 
-<meta property="og:title" content="{% if page.title == nil %}Simple Food{% else %}{{page.title}}{% endif %}" />
+<meta property="og:title" content="{% if page.title == nil %}{{site.data.application.worknotes.title}}{% else %}{{page.title}}{% endif %}" />
 <meta property="og:url" content="{{site.website}}{{ page.url }}" />
 <meta property="og:image" content="{% if page.image == nil %}/assets/favicon/favicon.png{% else %}{{ page.image }}{% endif %}" />
 <meta property="og:description" content="{% if page.excerpt != nil %}{{ page.excerpt | strip_html}} {% else %} {{ site.simple_food.description }}{% endif %}">

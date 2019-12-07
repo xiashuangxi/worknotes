@@ -15,7 +15,7 @@
                                         <h4 class="title">
                                             <a class="title-container" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ note.url }}">{{ note.title }}</a>
                                         </h4>
-                                        <div class="author">{{ site.worknotes.author }}</div>
+                                        <div class="author">{{ site.data.application.worknotes.author }}</div>
                                         <div class="intro">{{ note.excerpt |  strip_html}}</div>
                                     </div>
                                 </div>

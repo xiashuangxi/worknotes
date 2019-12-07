@@ -2,14 +2,9 @@
 markdown: kramdown
 
 worknotes:
-  develop: pro # dev 开发环境，pro 生成环境
-  slogan: 慎终如始无败事
-  namespace: worknotes
   theme: default
   colors: colors-rbw
-  author: Xia Shuangxi
   email: xiashuangxi@hotmail.com
-  title: Work Notes
   description: 个人的工作笔记。这里可以找到Java、Spring、Go或Python等相关的笔记。
   keywords: java,spring,go,python,ada,common lisp,面试,算法
   copyright: Copyright (C) 2019 · XIASHUANGXI@HOTMAIL.COM · All Rights Reserved. 
