@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Go：Hello World
-category: Go
+category: [Go, 编程语言]
 tag: Go
 permalink: /notes/category/编程语言/Go/Go-Hello-World/
 ---
