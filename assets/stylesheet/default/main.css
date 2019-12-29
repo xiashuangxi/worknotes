@@ -487,6 +487,22 @@ a:hover{
 .page .content{
     overflow: hidden;
 }
+
+
+.page .content table{
+    font-size: 1rem;
+    width: 100%;
+}
+
+.page .content table th,
+.page .content table tr,
+.page .content table td{
+    min-width: 80px;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+    vertical-align: text-top;
+}
+
 .layout-vertical .article .page {
     padding-top: 0;
     padding-bottom: 0;
