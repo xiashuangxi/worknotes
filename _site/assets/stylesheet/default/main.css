@@ -14,7 +14,9 @@
     background-color:var(--selection-bg-color);
     color:var(--selection-text-color);
 }
-
+/* *{
+    border: 1px solid red;
+} */
 
 body{
     font: 12px/1.5 'Helvetica Neue',Helvetica,'Lucida Grande','Luxi Sans',Arial,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','Wenquanyi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono',LiGothicMed;
@@ -23,6 +25,8 @@ body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: var(--white);
+
+    touch-action: none;
 }
 
 header{
@@ -487,6 +491,21 @@ a:hover{
 .page .content{
     overflow: hidden;
 }
+
+.page .content table{
+    font-size: 1rem;
+    width: 100%;
+}
+
+.page .content table th,
+.page .content table tr,
+.page .content table td{
+    min-width: 80px;
+    padding: 5px;
+    border: 1px solid #f1f1f1;
+    vertical-align: text-top;
+}
+
 .layout-vertical .article .page {
     padding-top: 0;
     padding-bottom: 0;
