@@ -23,6 +23,8 @@
 - name: 编程语言
   url: /notes/category/编程语言
   item: 
+  - name: C
+    url: /notes/category/编程语言/C
   - name: Java
     url: /notes/category/编程语言/Java
   - name: Ada
