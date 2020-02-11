@@ -422,8 +422,14 @@ a:hover{
 }
 
 .article-header{
-    margin: 3.75rem auto 0;
-    width: 42.5rem;
+    /* margin: 3.75rem auto 0; */
+
+    margin-top: 3.75rem;
+    margin-bottom: 0rem;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 42.5rem; */
+    width: 73.5rem !important;
     position: relative;
     z-index: 1;
 }
@@ -456,7 +462,8 @@ a:hover{
 .layout-vertical .article{
     position: relative;
     height: auto;
-    width: 46.5rem !important;
+    /* width: 46.5rem !important; */
+    width: 73.5rem !important;
 }
 
 .article .inner, .article{
@@ -480,7 +487,7 @@ a:hover{
 
 .page{
     position: relative;
-    padding: 5em 2rem 2.5em;
+    /* padding: 5em 2rem 2.5em; */
     margin: 0;
     cursor: default;
 }
@@ -508,6 +515,15 @@ a:hover{
     padding-bottom: 0;
 }
 
+.content p,
+.content table *
+{
+    font-size: 13px;
+}
+.content h4{
+    font-size: 1.15rem;
+}
+
 .content h1,
 .content h2,
 .content h3,
@@ -522,7 +538,8 @@ a:hover{
     text-align: justify;
     text-justify: inter-ideograph;
     hyphens: auto;
-    white-space: pre-line;
+    /* white-space: pre-line; */
+    with-space:initial;
     margin-bottom: 1.65rem;
 }
 
@@ -540,7 +557,8 @@ a:hover{
 .content ol,
 .content ul,
 .content p{
-    font-size: 16px;
+    /* font-size: 16px; */
+   
     font-weight: 400;
 }
 .content ol,
@@ -656,3 +674,48 @@ a:hover{
     /* margin: -16px 0 0; */
     width: 100%;
 }
+
+
+
+
+
+
+/* categorybar */
+.categorybar{
+    border: 1px solid #ccc;
+    width: 73.5rem !important;
+    margin: 0rem auto 5rem auto;
+    position: relative;
+    height: auto;
+}
+
+.categorybar .inner {
+    position: static;
+    padding: .25rem;
+    height: auto;
+}
+
+.categorybar .inner .content {
+    display: flex;
+    position: relative;
+}
+
+.categorybar .inner .content .label{
+    width: 2.5rem;
+}
+
+.categorybar .inner .content .categorys{
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+}
+.categorybar .inner .content .category{
+    padding: 0 .25rem;
+    /* border-right: 1px solid #ccc; */
+}
+/* 
+.categorybar .inner .content .category:last-child{
+    padding: 0 .25rem;
+    border-right: none;
+} */
+/* end categorybar */
