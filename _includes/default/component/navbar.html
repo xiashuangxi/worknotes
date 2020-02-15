@@ -107,21 +107,22 @@
                     //         console.log("current_index:", cur_item_inx, "active:", active_index)
                     //     }
                     // }else{
+                        if(window.fuse){
+                            var result = window.fuse.search(text);
+                            
+                            if(result && result.length >0){
+                                obj.setAttribute("style","display:block;")
+                                var item_string = "";
+                                for(var i=0; i< result.length; i++){
+                                    // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
+                                    item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                }
 
-                        var result = window.fuse.search(text);
-                        
-                        if(result && result.length >0){
-                            obj.setAttribute("style","display:block;")
-                            var item_string = "";
-                            for(var i=0; i< result.length; i++){
-                                // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                obj.innerHTML = item_string;
+                            }else{
+                                obj.setAttribute("style","display:none;")
+                                obj.innerHTML = "";
                             }
-
-                            obj.innerHTML = item_string;
-                        }else{
-                            obj.setAttribute("style","display:none;")
-                            obj.innerHTML = "";
                         }
                     // }
 
