@@ -87,7 +87,7 @@
 
             <div class="site-nav-search-container">
                 <div id="list-id" class="site-nav-search">
-                    <input type="text" onkeyup="search_worknotes(this.value)"/>
+                    <input type="text" onkeyup="search_worknotes(this.value)" onblur="close_search()"/>
                     <ul id="search_list" style="display: none;" >
                         <!-- 
                         <a title="控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/"><li>控制台中输出UTF8编码的C程序中的中文信息乱码问题</li></a>
@@ -126,7 +126,7 @@
 
             <script type="text/javascript">
                 window.onload = function(){
-                    axios.get("/worknotesdata/worknotes-list.json")
+                    axios.get("/worknotes/data/worknotes-list.json")
                     .then(function(response){
                         // console.log(response)
                         // console.log(typeof(response.data))
@@ -146,6 +146,11 @@
                     });                    
                 }
 
+                var close_search = function(){
+                    var obj = document.getElementById("search_list");
+                    obj.setAttribute("style","display:none;")
+                    obj.innerHTML = "";
+                }
                 var search_worknotes = function(text){
                     var obj = document.getElementById("search_list");
                     
@@ -197,21 +202,21 @@
                     //         console.log("current_index:", cur_item_inx, "active:", active_index)
                     //     }
                     // }else{
+                        if(window.fuse){
+                            var result = window.fuse.search(text);
+                            
+                            if(result && result.length >0){
+                                obj.setAttribute("style","display:block;")
+                                var item_string = "";
+                                for(var i=0; i< result.length; i++){
+                                    // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
+                                    item_string += '<a title="'+result[i].title+'" href=/worknotes'+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                }
 
-                        var result = window.fuse.search(text);
-                        
-                        if(result && result.length >0){
-                            obj.setAttribute("style","display:block;")
-                            var item_string = "";
-                            for(var i=0; i< result.length; i++){
-                                // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                obj.innerHTML = item_string;
+                            }else{
+                                close_search();
                             }
-
-                            obj.innerHTML = item_string;
-                        }else{
-                            obj.setAttribute("style","display:none;")
-                            obj.innerHTML = "";
                         }
                     // }
 
