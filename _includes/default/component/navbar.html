@@ -36,7 +36,7 @@
 
             <script type="text/javascript">
                 window.onload = function(){
-                    axios.get("{% if namespace != nil %}/{{namespace}}{% endif %}data/worknotes-list.json")
+                    axios.get("{% if namespace != nil %}/{{namespace}}{% endif %}/data/worknotes-list.json")
                     .then(function(response){
                         // console.log(response)
                         // console.log(typeof(response.data))
