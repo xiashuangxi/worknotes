@@ -30,7 +30,7 @@
                                     {% for index in (0..4) %}
                                     {% assign p = site.posts[index] %}
                                     <div>
-                                        <a href="{{p.url}}">{{p.title}}</a>
+                                        <a href="{{namespace}}/{{p.url}}">{{p.title}}</a>
                                         / {{p.date | date:"%Y-%m-%d"}}
                                     </div>
                                     {% endfor%}
@@ -64,7 +64,7 @@
                                             {% endfor %}
                                         {% endif %}
                                     {% endfor %}
-                                    <div><a href="{{url}}">{{c}}</a> / {{ category | last | size }}</div> 
+                                    <div><a href="{{namespace}}/{{url}}">{{c}}</a> / {{ category | last | size }}</div> 
                                     {% assign url = # %}
                                     {% endfor %}
                                     
