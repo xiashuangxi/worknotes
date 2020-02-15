@@ -1,6 +1,7 @@
 :root {
     --header-height: 50px;
     --sub-menu: 40px;
+    --default-main-width: 73.5rem;
 }
 ::selection {
     background-color:var(--selection-bg-color);
@@ -429,7 +430,8 @@ a:hover{
     margin-left: auto;
     margin-right: auto;
     /* width: 42.5rem; */
-    width: 73.5rem !important;
+    /* width: 73.5rem !important; */
+    width: var(--default-main-width);
     position: relative;
     z-index: 1;
 }
@@ -463,7 +465,8 @@ a:hover{
     position: relative;
     height: auto;
     /* width: 46.5rem !important; */
-    width: 73.5rem !important;
+    /* width: 73.5rem !important; */
+    width: var(--default-main-width);
 }
 
 .article .inner, .article{
@@ -683,7 +686,8 @@ a:hover{
 /* categorybar */
 .categorybar{
     border: 1px solid #ccc;
-    width: 73.5rem !important;
+    /* width: 73.5rem !important; */
+    width: var(--default-main-width);
     margin: 0rem auto 5rem auto;
     position: relative;
     height: auto;
@@ -719,3 +723,70 @@ a:hover{
     border-right: none;
 } */
 /* end categorybar */
+
+
+/* panel */
+/* .panel{
+    max-width: var(--default-main-width);
+    width: auto;
+    margin: 0 auto 0 auto;
+    font-size: 1rem;
+}
+
+.panel .header{
+    border: 1px solid #ccc;
+    
+} */
+.panel ,
+.subpanel{
+    position: relative;
+    max-width: calc( var(--default-main-width) + 1.5rem );
+    margin: 0 auto 0 auto;
+    font-size: 0.85rem;
+    width: 100%;
+    padding: 0 0.75rem 0.75rem  0.75rem;
+}
+.subpanel{
+    padding: 0 0 0 0.75rem;
+    
+}
+.subpanel:first-child{
+    padding-left: 0;
+}
+
+
+
+.panel .inner,
+.panel .inner-none-border {
+    display: flex;
+    width: 100%;
+    padding: 0.25rem;
+    height: auto;
+    flex-flow: column;
+    border: 1px solid #ccc;
+}
+
+.panel .inner-none-border {
+    border: none;
+    padding: 0;
+    flex-flow: row;
+}
+
+/* .panel .inner-none-border .subpanel .inner{
+    flex-flow: row;
+} */
+
+.panel .inner .header {
+    background-color: #f6f7f8;
+    width: 100%;
+}
+
+.panel .inner .content {
+    border-color: white;
+    font-size: 13px;
+    border-top: 1px solid #ccc;
+    padding-top: 0.25rem;
+}
+
+
+/* endpanel*/

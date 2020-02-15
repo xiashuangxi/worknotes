@@ -2,7 +2,7 @@
     <div id="react-root">
         <div class="channel-featured">
             <div class="widgets-container">
-                <div class="widgets-article-count">
+                <!-- <div class="widgets-article-count">
                     <div class="article-count-mate">至今共发布
                         <span class="article-count-num">{{ site.posts.size }}</span>篇文章
                     </div>
@@ -10,6 +10,80 @@
                 <div class="widgets-slogan">
                     <div class="widgets-slogan-mate">
                         <p>{{ site.data.application.worknotes.slogin }}</p>
+                    </div>
+                </div> -->
+
+                <div class="panel">
+                    <div class="inner">
+                        <div class="header">
+                            至今共发布<b>{{ site.posts.size }}</b>篇文章
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel ">
+                    <div class=" inner-none-border  ">
+                        <div class="subpanel ">
+                            <div class="inner">
+                                <div class="header">最新发布的文章</div>
+                                <div class="content">
+                                    {% for index in (0..4) %}
+                                    {% assign p = site.posts[index] %}
+                                    <div>
+                                        <a href="{{p.url}}">{{p.title}}</a>
+                                        / {{p.date | date:"%Y-%m-%d"}}
+                                    </div>
+                                    {% endfor%}
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="subpanel">
+                            <div class="inner">
+                                <div class="header">
+                                    分类/标签
+                                </div>
+                                <div class="content">
+                                    {% for category  in site.categories %}
+                                    {% assign c = category | first %}
+                                    
+                                    {% for m in site.data.menu %}
+                                        {% assign ut = m.url | split: "/" | last %}
+                                        {% if ut == c %}
+                                            {% assign url = m.url %}
+                                            {% break %}
+                                        {% endif %}
+                                    
+                                        {% if m.item %}
+                                            {% for sm in m.item  %}
+                                            {% assign ut = sm.url | split: "/" | last %}
+                                                {% if ut == c %}
+                                                    {% assign url = sm.url %}
+                                                    {% break %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <div><a href="{{url}}">{{c}}</a> / {{ category | last | size }}</div> 
+                                    {% assign url = # %}
+                                    {% endfor %}
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="inner">
+                        <div class="header">
+                            文章许可协议
+                        </div>
+                        <div class="content" style="text-align: center;">
+                            <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                                <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+                            </a><br />本网站所有作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
+                        </div>
                     </div>
                 </div>
             </div>
