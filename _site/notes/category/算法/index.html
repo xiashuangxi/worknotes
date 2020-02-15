@@ -84,28 +84,155 @@
                     </ul>
                 </nav>
             </div>
-            <!-- <a href="/search.html" title="Work Notes" class="site-search-logo" id="drop-search-action" dropsearchitem="drop-search-item" dropsearchid="drop-search-action">
-                <img src="/assets/favicon/favicon.png"/> 
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 14 14" class="fill-current-color"><path fill="#fff" d="M14 12.83l-2.19-2.19a6.61 6.61 0 10-1.17 1.17L12.83 14zM2.5 10.7a5.8 5.8 0 018.2-8.2 5.8 5.8 0 01-8.2 8.2z"></path></svg>
+
+            <div class="site-nav-search-container">
+                <div id="list-id" class="site-nav-search">
+                    <input type="text" onkeyup="search_worknotes(this.value)"/>
+                    <ul id="search_list" style="display: none;" >
+                        <!-- 
+                        <a title="控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/"><li>控制台中输出UTF8编码的C程序中的中文信息乱码问题</li></a>
+                        
+                        <a title="设计模式" href="/notes/category/碎笔/设计模式"><li>设计模式</li></a>
+                        
+                        <a title="Go语言实现观察者模式" href="/notes/category/编程语言/Go/Go语言实现观察者模式/"><li>Go语言实现观察者模式</li></a>
+                        
+                        <a title="Vim简单使用教程" href="/notes/category/碎笔/Vim简单使用教程"><li>Vim简单使用教程</li></a>
+                        
+                        <a title="Go语言实现单例模式" href="/notes/category/编程语言/Go/Go语言实现单例模式/"><li>Go语言实现单例模式</li></a>
+                        
+                        <a title="Go：Hello World" href="/notes/category/编程语言/Go/Go-Hello-World/"><li>Go：Hello World</li></a>
+                        
+                        <a title="初识 Common Lisp" href="/notes/category/编程语言/common-lisp/初识-Common-Lisp/"><li>初识 Common Lisp</li></a>
+                        
+                        <a title="配置中心：Spring Cloud Config" href="/notes/category/Spring/配置中心-Spring-Cloud-Config-Server"><li>配置中心：Spring Cloud Config</li></a>
+                        
+                        <a title="服务注册与发现：Sprint Cloud Eureka" href="/notes/category/Spring/服务注册与发现-Sprint-Cloud-Eureka/"><li>服务注册与发现：Sprint Cloud Eureka</li></a>
+                        
+                        <a title="LeetCode 字符反转" href="/notes/category/Spring/LeetCode-字符反转"><li>LeetCode 字符反转</li></a>
+                        
+                        <a title="Go 安装与环境设置" href="/notes/category/编程语言/Go/Go-安装与环境设置/"><li>Go 安装与环境设置</li></a>
+                        
+                        <a title="初识 Ada" href="/notes/category/编程语言/Ada/初识-Ada/"><li>初识 Ada</li></a>
+                        
+                        <a title="单例模式" href="/notes/category/碎笔/单例模式"><li>单例模式</li></a>
+                         -->
+                    </ul>
                 </div>
-            </a> -->
+            </div>
+
+            <!-- search script -->
+          
+
+
+            <script type="text/javascript">
+                window.onload = function(){
+                    axios.get("data/worknotes-list.json")
+                    .then(function(response){
+                        // console.log(response)
+                        // console.log(typeof(response.data))
+
+                        var options = {
+                            shouldSort: true,
+                            threshold: 0.6,
+                            location: 0,
+                            distance: 100,
+                            maxPatternLength: 32,
+                            minMatchCharLength: 1,
+                            keys: [
+                                "title"
+                            ]
+                        };
+                        window.fuse = new Fuse(response.data, options); 
+                    });                    
+                }
+
+                var search_worknotes = function(text){
+                    var obj = document.getElementById("search_list");
+                    
+
+                    // // 选择查询出来的数据
+                    // var objitems = obj.getElementsByTagName('li');
+                    // var cur_item = null;
+                    // var cur_item_inx = -1;
+
+                    // if(objitems.length > 0){
+                    //     for( var i = 0; i < objitems.length; i++ ){
+                    //         var active = objitems[i].getAttribute("class");
+
+                    //         // console.log("ACTIVE", objitems[i])
+                    //         if(active && active.length >0 ){
+                    //             cur_item = active;
+                    //             cur_item_inx = i ;
+                    //         }
+                    //     }
+                    // }
+
+
+                    // var e = event || window.event || arguments.callee.caller.arguments[0];
+                    // if(e && e.keyCode==38 ){
+                    //     if(objitems.length > 0){
+                    //         var active_index = cur_item_inx - 1;
+                    //         console.log("cur_item_inx - 1;", active_index)
+                    //         if(active_index < 0){
+                    //             active_index = objitems.length-1;
+                    //         }
+                    //         if(cur_item_inx >= 0){
+                    //             objitems[cur_item_inx].removeAttribute("class")
+                    //         }
+                    //         objitems[active_index].setAttribute("class","active");
+
+                    //         console.log("current_index:", cur_item_inx, "active:", active_index,objitems[5])
+                    //     }
+                    // }else if( e && e.keyCode==40 ){
+                    //     if(objitems.length > 0){
+                    //         var active_index = cur_item_inx+1;
+                    //         if(active_index > objitems.length-1){
+                    //             active_index = 0;
+                    //         }
+                    //         if(cur_item_inx >= 0){
+                    //             objitems[cur_item_inx].removeAttribute("class")
+                    //         }
+                    //         objitems[active_index].setAttribute("class","active");
+
+                    //         console.log("current_index:", cur_item_inx, "active:", active_index)
+                    //     }
+                    // }else{
+
+                        var result = window.fuse.search(text);
+                        
+                        if(result && result.length >0){
+                            obj.setAttribute("style","display:block;")
+                            var item_string = "";
+                            for(var i=0; i< result.length; i++){
+                                // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
+                                item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                            }
+
+                            obj.innerHTML = item_string;
+                        }else{
+                            obj.setAttribute("style","display:none;")
+                            obj.innerHTML = "";
+                        }
+                    // }
+
+
+                    
+
+                    
+
+
+                }
+
+            </script>
+            <!-- end search script -->
         </div>
 
         
 
-        <!-- <div class="site-nav-search-container" id="drop-search-item">
-            <div class="search-inner">
-                <div class="search-content" >
-                    <input type="text">
-                </div>
-                <div class="search-btn" >
-                    <button>查找</button>
-                </div>
-            </div>
-        </div> -->
     </header>
 </div>
+
+
 
             
 <div id="main">
@@ -155,6 +282,9 @@
 <script src="/assets/scripts/lib/jquery.nicescroll.js" crossorigin="anonymous"></script>
 
 
+<script src="/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
+
+<script src="/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
 
 <!-- end bootstrup script -->
 <!-- <script src="/assets/scripts/default/main.js" ></script> -->

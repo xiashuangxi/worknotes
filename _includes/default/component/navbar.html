@@ -18,12 +18,123 @@
                     </ul>
                 </nav>
             </div>
-            <!-- <a href="{{namespace}}/search.html" title="Work Notes" class="site-search-logo" id="drop-search-action" dropsearchitem="drop-search-item" dropsearchid="drop-search-action">
-                <img src="{{accets_path}}/favicon/favicon.png"/> 
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" viewBox="0 0 14 14" class="fill-current-color"><path fill="#fff" d="M14 12.83l-2.19-2.19a6.61 6.61 0 10-1.17 1.17L12.83 14zM2.5 10.7a5.8 5.8 0 018.2-8.2 5.8 5.8 0 01-8.2 8.2z"></path></svg>
+
+            <div class="site-nav-search-container">
+                <div id="list-id" class="site-nav-search">
+                    <input type="text" onkeyup="search_worknotes(this.value)"/>
+                    <ul id="search_list" style="display: none;" >
+                        <!-- {% for p in site.posts %}
+                        <a title="{{p.title}}" href="{{p.url}}"><li>{{p.title}}</li></a>
+                        {% endfor %} -->
+                    </ul>
                 </div>
-            </a> -->
+            </div>
+
+            <!-- search script -->
+          
+
+
+            <script type="text/javascript">
+                window.onload = function(){
+                    axios.get("{% if namespace != nil %}/{{namespace}}{% endif %}data/worknotes-list.json")
+                    .then(function(response){
+                        // console.log(response)
+                        // console.log(typeof(response.data))
+
+                        var options = {
+                            shouldSort: true,
+                            threshold: 0.6,
+                            location: 0,
+                            distance: 100,
+                            maxPatternLength: 32,
+                            minMatchCharLength: 1,
+                            keys: [
+                                "title"
+                            ]
+                        };
+                        window.fuse = new Fuse(response.data, options); 
+                    });                    
+                }
+
+                var search_worknotes = function(text){
+                    var obj = document.getElementById("search_list");
+                    
+
+                    // // 选择查询出来的数据
+                    // var objitems = obj.getElementsByTagName('li');
+                    // var cur_item = null;
+                    // var cur_item_inx = -1;
+
+                    // if(objitems.length > 0){
+                    //     for( var i = 0; i < objitems.length; i++ ){
+                    //         var active = objitems[i].getAttribute("class");
+
+                    //         // console.log("ACTIVE", objitems[i])
+                    //         if(active && active.length >0 ){
+                    //             cur_item = active;
+                    //             cur_item_inx = i ;
+                    //         }
+                    //     }
+                    // }
+
+
+                    // var e = event || window.event || arguments.callee.caller.arguments[0];
+                    // if(e && e.keyCode==38 ){
+                    //     if(objitems.length > 0){
+                    //         var active_index = cur_item_inx - 1;
+                    //         console.log("cur_item_inx - 1;", active_index)
+                    //         if(active_index < 0){
+                    //             active_index = objitems.length-1;
+                    //         }
+                    //         if(cur_item_inx >= 0){
+                    //             objitems[cur_item_inx].removeAttribute("class")
+                    //         }
+                    //         objitems[active_index].setAttribute("class","active");
+
+                    //         console.log("current_index:", cur_item_inx, "active:", active_index,objitems[5])
+                    //     }
+                    // }else if( e && e.keyCode==40 ){
+                    //     if(objitems.length > 0){
+                    //         var active_index = cur_item_inx+1;
+                    //         if(active_index > objitems.length-1){
+                    //             active_index = 0;
+                    //         }
+                    //         if(cur_item_inx >= 0){
+                    //             objitems[cur_item_inx].removeAttribute("class")
+                    //         }
+                    //         objitems[active_index].setAttribute("class","active");
+
+                    //         console.log("current_index:", cur_item_inx, "active:", active_index)
+                    //     }
+                    // }else{
+
+                        var result = window.fuse.search(text);
+                        
+                        if(result && result.length >0){
+                            obj.setAttribute("style","display:block;")
+                            var item_string = "";
+                            for(var i=0; i< result.length; i++){
+                                // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
+                                item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                            }
+
+                            obj.innerHTML = item_string;
+                        }else{
+                            obj.setAttribute("style","display:none;")
+                            obj.innerHTML = "";
+                        }
+                    // }
+
+
+                    
+
+                    
+
+
+                }
+
+            </script>
+            <!-- end search script -->
         </div>
 
         {% if menuobj.item %}
@@ -36,15 +147,7 @@
         </div>
         {% endif %}
 
-        <!-- <div class="site-nav-search-container" id="drop-search-item">
-            <div class="search-inner">
-                <div class="search-content" >
-                    <input type="text">
-                </div>
-                <div class="search-btn" >
-                    <button>查找</button>
-                </div>
-            </div>
-        </div> -->
     </header>
 </div>
+
+

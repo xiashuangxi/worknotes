@@ -275,17 +275,6 @@ a:hover{
     border-left: .3em solid transparent;
 }
 
-.site-nav-search-container{
-    display: flex;
-    position: relative;
-
-    display: none;
-}
-.site-nav-search-container .search-inner{
-    width: auto;
-    display: inline-flex;
-    margin: 0.65rem auto;
-}
 
 .search-content input{
     border: none;
@@ -790,3 +779,62 @@ a:hover{
 
 
 /* endpanel*/
+
+/* search */
+#header-compact-v1 .site-nav-search-container{
+    height: 50px;
+    height: var(--header-height);
+    -webkit-box-flex: 1; 
+    overflow: hidden;
+
+    display: flex;/*设置为弹性容器*/
+    align-items: center; /*定义div1的元素垂直居中*/
+    justify-content: center; /*定义div1的里的元素水平居中*/
+}
+
+#header-compact-v1 .site-nav-search{
+    border: 1px solid #a90b2e;
+    height: 25px;
+    background-color: white;
+    width: 250px;
+    position: relative;
+    padding: 2px;
+}
+
+#header-compact-v1 .site-nav-search ul{
+    position: fixed;
+    display: flex;
+    flex-flow: column;
+    width: 340px;
+    background-color: white;
+    border: 1px solid #ccc;
+    right: 26px;
+    max-height: calc( 100vh - 20vh );
+    margin-top: 4px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.site-nav-search ul li{
+    width: 100%;
+    padding: 2px;
+    font-size:.75rem;
+    /* color: black; */
+    border-bottom: 1px solid #f6f6f6;
+    cursor: pointer;
+}
+.site-nav-search ul a{
+    color: var(--blue);
+}
+.site-nav-search ul li.active,
+.site-nav-search ul li:hover{
+    background-color: var(--nav-bg-color);
+    color: white;
+}
+#header-compact-v1 .site-nav-search input{
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+/* end search */
