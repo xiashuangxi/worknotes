@@ -115,7 +115,7 @@
                                 var item_string = "";
                                 for(var i=0; i< result.length; i++){
                                     // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                    item_string += '<a title="'+result[i].title+'"  href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                    item_string += '<a title="'+result[i].title+'" href={% if namespace != nil %}/{{namespace}}{% endif %}'+result[i].url+'><li>'+result[i].title+'</li></a>'
                                 }
 
                                 obj.innerHTML = item_string;
