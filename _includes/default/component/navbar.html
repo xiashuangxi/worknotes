@@ -21,8 +21,9 @@
 
             <div class="site-nav-search-container">
                 <div id="list-id" class="site-nav-search">
-                    <input type="text" onkeyup="search_worknotes(this.value)" onblur="close_search()"/>
-                    <ul id="search_list" style="display: none;" >
+                    <input type="text" id="search_input" onkeyup="search_worknotes(this.value)" onblur="close_search()"/>
+                    <ul id="search_list" style="display: none;" onmouseover="document.getElementById('search_input').removeAttribute('onblur')"
+                    onmouseout="document.getElementById('search_input').setAttribute('onblur','close_search()')">
                         <!-- {% for p in site.posts %}
                         <a title="{{p.title}}" href="{{p.url}}"><li>{{p.title}}</li></a>
                         {% endfor %} -->

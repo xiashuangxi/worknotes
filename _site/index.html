@@ -23,7 +23,7 @@
 <meta name="twitter:site" content="@nytimesbits" />
 <meta name="twitter:creator" content="@nickbilton" />
 
-<link rel="shortcut icon" type="image/ico" href="/worknotes/assets/favicon/favicon.ico" />
+<link rel="shortcut icon" type="image/ico" href="/assets/favicon/favicon.ico" />
 <meta name="msvalidate.01" content="5369E33A969777C6DEEDF11A4B45CE5A" />
 <meta name="google-site-verification" content="3fgcxcUt1mLPMwubgCzeBfjtoP1A3ubCfYg8FT4C0Bs" />
 <title>
@@ -31,16 +31,16 @@
 </title>
 <!-- bootstrup stylesheet -->
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheet/lib/bootstrap.min.css" crossorigin="anonymous">
 
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <!-- end bootstrup stylesheet -->
 
 <!-- custom -->
-<link rel="stylesheet" href="/worknotes/assets/stylesheet/default/main.css" />
+<link rel="stylesheet" href="/assets/stylesheet/default/main.css" />
 
 
-    <link rel="stylesheet" href="/worknotes/assets/stylesheet/default/colors/colors-rbw.css" />
+    <link rel="stylesheet" href="/assets/stylesheet/default/colors/colors-rbw.css" />
 
 
 
@@ -56,8 +56,8 @@
 <div id="header-container"   >
     <header id="header-compact-v1" class="should-stick">
         <div class="header-inner">
-            <a href="/worknotes" title="Work Notes" class="site-logo">
-                <!-- <img src="/worknotes/assets/favicon/favicon.png"/> -->
+            <a href="/" title="Work Notes" class="site-logo">
+                <!-- <img src="/assets/favicon/favicon.png"/> -->
                 <div style="padding-right: 2px; font-size: 18px; color: var(--black); font-weight: 900;">Work</div>
                 <div style="padding-left: 2px; font-size: 18px; color: var(--white); font-weight: 900;">Notes</div>
             </a>
@@ -65,21 +65,21 @@
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         
-                            <li><a href="/worknotes/notes/category/微服务/">微服务</a></li>
+                            <li><a href="/notes/category/微服务/">微服务</a></li>
                         
-                            <li><a href="/worknotes/notes/category/Spring">Spring</a></li>
+                            <li><a href="/notes/category/Spring">Spring</a></li>
                         
-                            <li><a href="/worknotes/notes/category/Redis">Redis</a></li>
+                            <li><a href="/notes/category/Redis">Redis</a></li>
                         
-                            <li><a href="/worknotes/notes/category/消息队列">消息队列</a></li>
+                            <li><a href="/notes/category/消息队列">消息队列</a></li>
                         
-                            <li><a href="/worknotes/notes/category/算法">算法</a></li>
+                            <li><a href="/notes/category/算法">算法</a></li>
                         
-                            <li><a href="/worknotes/notes/category/编程语言">编程语言</a></li>
+                            <li><a href="/notes/category/编程语言">编程语言</a></li>
                         
-                            <li><a href="/worknotes/notes/category/碎笔">碎笔</a></li>
+                            <li><a href="/notes/category/碎笔">碎笔</a></li>
                         
-                            <li><a href="/worknotes/notes/category/面试问题">面试问题</a></li>
+                            <li><a href="/notes/category/面试问题">面试问题</a></li>
                         
                     </ul>
                 </nav>
@@ -87,8 +87,9 @@
 
             <div class="site-nav-search-container">
                 <div id="list-id" class="site-nav-search">
-                    <input type="text" onkeyup="search_worknotes(this.value)" onblur="close_search()"/>
-                    <ul id="search_list" style="display: none;" >
+                    <input type="text" id="search_input" onkeyup="search_worknotes(this.value)" onblur="close_search()"/>
+                    <ul id="search_list" style="display: none;" onmouseover="document.getElementById('search_input').removeAttribute('onblur')"
+                    onmouseout="document.getElementById('search_input').setAttribute('onblur','close_search()')">
                         <!-- 
                         <a title="控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/"><li>控制台中输出UTF8编码的C程序中的中文信息乱码问题</li></a>
                         
@@ -126,7 +127,7 @@
 
             <script type="text/javascript">
                 window.onload = function(){
-                    axios.get("/worknotes/data/worknotes-list.json")
+                    axios.get("/data/worknotes-list.json")
                     .then(function(response){
                         // console.log(response)
                         // console.log(typeof(response.data))
@@ -210,7 +211,7 @@
                                 var item_string = "";
                                 for(var i=0; i< result.length; i++){
                                     // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                    item_string += '<a title="'+result[i].title+'" href=/worknotes'+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                    item_string += '<a title="'+result[i].title+'" href='+result[i].url+'><li>'+result[i].title+'</li></a>'
                                 }
 
                                 obj.innerHTML = item_string;
@@ -272,32 +273,68 @@
                                     
                                     
                                     <div>
-                                        <a title="👉控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/worknotes/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">👉 控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
+                                        <a title="👉控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">👉 控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
                                         / 2020-02-01
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉设计模式" href="/worknotes/notes/category/碎笔/设计模式">👉 设计模式</a>
+                                        <a title="👉设计模式" href="/notes/category/碎笔/设计模式">👉 设计模式</a>
                                         / 2019-12-28
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Go语言实现观察者模式" href="/worknotes/notes/category/编程语言/Go/Go语言实现观察者模式/">👉 Go语言实现观察者模式</a>
+                                        <a title="👉Go语言实现观察者模式" href="/notes/category/编程语言/Go/Go语言实现观察者模式/">👉 Go语言实现观察者模式</a>
                                         / 2019-12-18
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Vim简单使用教程" href="/worknotes/notes/category/碎笔/Vim简单使用教程">👉 Vim简单使用教程</a>
+                                        <a title="👉Vim简单使用教程" href="/notes/category/碎笔/Vim简单使用教程">👉 Vim简单使用教程</a>
                                         / 2019-12-16
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Go语言实现单例模式" href="/worknotes/notes/category/编程语言/Go/Go语言实现单例模式/">👉 Go语言实现单例模式</a>
+                                        <a title="👉Go语言实现单例模式" href="/notes/category/编程语言/Go/Go语言实现单例模式/">👉 Go语言实现单例模式</a>
                                         / 2019-12-14
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉Go：Hello World" href="/notes/category/编程语言/Go/Go-Hello-World/">👉 Go：Hello World</a>
+                                        / 2019-11-06
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉初识 Common Lisp" href="/notes/category/编程语言/common-lisp/初识-Common-Lisp/">👉 初识 Common Lisp</a>
+                                        / 2019-10-31
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉配置中心：Spring Cloud Config" href="/notes/category/Spring/配置中心-Spring-Cloud-Config-Server">👉 配置中心：Spring Cloud Config</a>
+                                        / 2019-10-24
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉服务注册与发现：Sprint Cloud Eureka" href="/notes/category/Spring/服务注册与发现-Sprint-Cloud-Eureka/">👉 服务注册与发现：Sprint Cloud Eureka</a>
+                                        / 2019-10-24
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉LeetCode 字符反转" href="/notes/category/Spring/LeetCode-字符反转">👉 LeetCode 字符反转</a>
+                                        / 2019-10-24
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉Go 安装与环境设置" href="/notes/category/编程语言/Go/Go-安装与环境设置/">👉 Go 安装与环境设置</a>
+                                        / 2019-10-24
                                     </div>
                                     
                                 </div>
@@ -379,7 +416,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌碎笔" href="/worknotes/notes/category/碎笔">📌碎笔</a> / 3</div> 
+                                    <div><a title="📌碎笔" href="/notes/category/碎笔">📌碎笔</a> / 3</div> 
                                     
                                     
                                     
@@ -448,7 +485,7 @@
                                     
                                         
                                     
-                                    <div><a title="📌Ada" href="/worknotes/notes/category/编程语言/Ada">📌Ada</a> / 1</div> 
+                                    <div><a title="📌Ada" href="/notes/category/编程语言/Ada">📌Ada</a> / 1</div> 
                                     
                                     
                                     
@@ -494,7 +531,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌编程语言" href="/worknotes/notes/category/编程语言">📌编程语言</a> / 7</div> 
+                                    <div><a title="📌编程语言" href="/notes/category/编程语言">📌编程语言</a> / 7</div> 
                                     
                                     
                                     
@@ -566,7 +603,7 @@
                                     
                                         
                                     
-                                    <div><a title="📌Go" href="/worknotes/notes/category/编程语言/Go">📌Go</a> / 4</div> 
+                                    <div><a title="📌Go" href="/notes/category/编程语言/Go">📌Go</a> / 4</div> 
                                     
                                     
                                     
@@ -607,7 +644,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌算法" href="/worknotes/notes/category/算法">📌算法</a> / 1</div> 
+                                    <div><a title="📌算法" href="/notes/category/算法">📌算法</a> / 1</div> 
                                     
                                     
                                     
@@ -622,7 +659,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌Spring" href="/worknotes/notes/category/Spring">📌Spring</a> / 2</div> 
+                                    <div><a title="📌Spring" href="/notes/category/Spring">📌Spring</a> / 2</div> 
                                     
                                     
                                     
@@ -632,7 +669,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌微服务" href="/worknotes/notes/category/微服务/">📌微服务</a> / 2</div> 
+                                    <div><a title="📌微服务" href="/notes/category/微服务/">📌微服务</a> / 2</div> 
                                     
                                     
                                     
@@ -710,7 +747,7 @@
                                     
                                         
                                     
-                                    <div><a title="📌CommonLisp" href="/worknotes/notes/category/编程语言/CommonLisp">📌CommonLisp</a> / 1</div> 
+                                    <div><a title="📌CommonLisp" href="/notes/category/编程语言/CommonLisp">📌CommonLisp</a> / 1</div> 
                                     
                                     
                                     
@@ -773,7 +810,7 @@
                                     
                                         
                                     
-                                    <div><a title="📌C" href="/worknotes/notes/category/编程语言/C">📌C</a> / 1</div> 
+                                    <div><a title="📌C" href="/notes/category/编程语言/C">📌C</a> / 1</div> 
                                     
                                     
                                     
@@ -790,7 +827,7 @@
                         </div>
                         <div class="content" style="text-align: center;">
                             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
-                                <img alt="知识共享许可协议" style="border-width:0" src="/worknotes/assets/images/license-80x15.png" />
+                                <img alt="知识共享许可协议" style="border-width:0" src="/assets/images/license-80x15.png" />
                                 <!-- <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /> -->
                             </a><br />本网站所有作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
                         </div>
@@ -811,18 +848,18 @@
     </body>
     <!-- bootstrup script -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+<script src="/assets/scripts/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/popper.min.js"  crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/jquery.nicescroll.js" crossorigin="anonymous"></script>
 
 
-<script src="/worknotes/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
 
-<script src="/worknotes/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
 
 <!-- end bootstrup script -->
-<!-- <script src="/worknotes/assets/scripts/default/main.js" ></script> -->
+<!-- <script src="/assets/scripts/default/main.js" ></script> -->
 <script>
 // $("body").niceScroll({
 //     cursorborder:"",
