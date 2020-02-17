@@ -16,6 +16,9 @@
     color:var(--selection-text-color);
 }
 
+.bg-color-info{
+    background-color: #E6F2FF;
+}
 
 body{
     font: 12px/1.5 'Helvetica Neue',Helvetica,'Lucida Grande','Luxi Sans',Arial,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','Wenquanyi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono',LiGothicMed;
@@ -765,8 +768,12 @@ a:hover{
     flex-flow: row;
 } */
 
-.panel .inner .header {
+.panel .inner .header.default-bg-color{
     background-color: #f6f7f8;
+}
+
+.panel .inner .header {
+    /* background-color: #f6f7f8; */
     width: 100%;
 }
 

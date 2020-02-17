@@ -15,9 +15,14 @@
                 </div> -->
 
                 <div class="panel">
-                    <div class="inner">
-                        <div class="header">
-                            至今共发布<b>{{ site.posts.size }}</b>篇文章
+                    <div class="inner bg-color-info">
+                        <div class="bg-color-info header ">
+                            WorkNotes 是什么？
+                        </div>
+                        <div class="content">
+                            WorkNotes 是一个个人记录与工作技能相关信息相关的网站。以便在以后的工作中遇到
+                            相应的情况可以快速的进行查阅。本站至今共发布了<b>{{site.posts | size}}</b>
+                            篇文章作品。 -- <font style="font-style:italic;">{{site.data.application.worknotes.slogin}}</font>
                         </div>
                     </div>
                 </div>
@@ -26,7 +31,7 @@
                     <div class=" inner-none-border  ">
                         <div class="subpanel ">
                             <div class="inner">
-                                <div class="header">最新发布的文章</div>
+                                <div class="header default-bg-color">最新发布的文章</div>
                                 <div class="content">
                                     {% for index in (0..site.data.application.worknotes.new_add_list_count) %}
                                     {% assign p = site.posts[index] %}
@@ -41,7 +46,7 @@
                         
                         <div class="subpanel">
                             <div class="inner">
-                                <div class="header">
+                                <div class="header default-bg-color">
                                     分类/标签
                                 </div>
                                 <div class="content">
@@ -75,10 +80,74 @@
                     </div>
                 </div>
 
+                <!-- 目录 -->
+                <div class="panel">
+                    <div class="inner bg-color-info">
+                        <div class="bg-color-info header ">
+                            目录
+                        </div>
+                        <div class="content">
+                            <div>
+                                分类：
+                                {% for category  in site.categories %}
+                                    {% assign c = category | first %}
+                                    
+                                    {% for m in site.data.menu %}
+                                        {% assign ut = m.url | split: "/" | last %}
+                                        {% if ut == c %}
+                                            {% assign url = m.url %}
+                                            {% break %}
+                                        {% endif %}
+                                    
+                                        {% if m.item %}
+                                            {% for sm in m.item  %}
+                                            {% assign ut = sm.url | split: "/" | last %}
+                                                {% if ut == c %}
+                                                    {% assign url = sm.url %}
+                                                    {% break %}
+                                                {% endif %}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    <a title="{{c}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{url}}">{{c}}</a>
+                                    {% if forloop.last == false%}·{% endif %}
+                                    {% assign url = # %}
+                                    {% endfor %}
+                            </div>
+                            <div>
+                                标签：
+                                {% for tag in site.tags %}
+                                    <a title="{{tag | first}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}/notes/tag/{{tag | first}}">{{tag | first}}</a>
+                                    {% if forloop.last == false%}·{% endif %}
+                                {% endfor %}
+                            </div>
+                            <div>
+                                作者：
+                                {% assign  authors = "" %}
+                                {% for post in site.posts %}
+                                    {% if post.author %} 
+                                        {% assign authors = authors | append: post.author | append: "," %} 
+                                    {% else %}
+                                        {% assign authors = authors | append: site.data.application.worknotes.author | append: "," %} 
+                                    {% endif %}
+
+                                {% endfor %}
+                                {% assign authors = authors | split: "," | uniq  %}
+
+                                {% for author in authors  %}
+                                    <a href="javascript:void();" title="{{author}}">{{author}}</a>
+                                    {% if forloop.last == false%}·{% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- license -->
                 <div class="panel">
                     <div class="inner">
-                        <div class="header">
-                            文章许可协议
+                        <div class="header default-bg-color">
+                            文章许可协议 
                         </div>
                         <div class="content" style="text-align: center;">
                             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
