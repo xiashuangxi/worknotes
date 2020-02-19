@@ -23,7 +23,7 @@
 <meta name="twitter:site" content="@nytimesbits" />
 <meta name="twitter:creator" content="@nickbilton" />
 
-<link rel="shortcut icon" type="image/ico" href="/assets/favicon/favicon.ico" />
+<link rel="shortcut icon" type="image/ico" href="/worknotes/assets/favicon/favicon.ico" />
 <meta name="msvalidate.01" content="5369E33A969777C6DEEDF11A4B45CE5A" />
 <meta name="google-site-verification" content="3fgcxcUt1mLPMwubgCzeBfjtoP1A3ubCfYg8FT4C0Bs" />
 <title>
@@ -31,16 +31,16 @@
 </title>
 <!-- bootstrup stylesheet -->
 
-<link rel="stylesheet" href="/assets/stylesheet/lib/bootstrap.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <!-- end bootstrup stylesheet -->
 
 <!-- custom -->
-<link rel="stylesheet" href="/assets/stylesheet/default/main.css" />
+<link rel="stylesheet" href="/worknotes/assets/stylesheet/default/main.css" />
 
 
-    <link rel="stylesheet" href="/assets/stylesheet/default/colors/colors-rbw.css" />
+    <link rel="stylesheet" href="/worknotes/assets/stylesheet/default/colors/colors-rbw.css" />
 
 
 
@@ -56,8 +56,8 @@
 <div id="header-container"   >
     <header id="header-compact-v1" class="should-stick">
         <div class="header-inner">
-            <a href="/" title="Work Notes" class="site-logo">
-                <!-- <img src="/assets/favicon/favicon.png"/> -->
+            <a href="/worknotes" title="Work Notes" class="site-logo">
+                <!-- <img src="/worknotes/assets/favicon/favicon.png"/> -->
                 <div style="padding-right: 2px; font-size: 18px; color: var(--black); font-weight: 900;">Work</div>
                 <div style="padding-left: 2px; font-size: 18px; color: var(--white); font-weight: 900;">Notes</div>
             </a>
@@ -65,21 +65,23 @@
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         
-                            <li><a href="/notes/category/微服务/">微服务</a></li>
+                            <li><a href="/worknotes/notes/category/微服务/">微服务</a></li>
                         
-                            <li><a href="/notes/category/Spring">Spring</a></li>
+                            <li><a href="/worknotes/notes/category/Spring">Spring</a></li>
                         
-                            <li><a href="/notes/category/Redis">Redis</a></li>
+                            <li><a href="/worknotes/notes/category/Redis">Redis</a></li>
                         
-                            <li><a href="/notes/category/消息队列">消息队列</a></li>
+                            <li><a href="/worknotes/notes/category/消息队列">消息队列</a></li>
                         
-                            <li><a href="/notes/category/算法">算法</a></li>
+                            <li><a href="/worknotes/notes/category/算法">算法</a></li>
                         
-                            <li><a href="/notes/category/编程语言">编程语言</a></li>
+                            <li><a href="/worknotes/notes/category/编程语言">编程语言</a></li>
                         
-                            <li><a href="/notes/category/碎笔">碎笔</a></li>
+                            <li><a href="/worknotes/notes/category/碎笔">碎笔</a></li>
                         
-                            <li><a href="/notes/category/面试问题">面试问题</a></li>
+                            <li><a href="/worknotes/notes/category/面试问题">面试问题</a></li>
+                        
+                            <li><a href="/worknoteshttps://xiashuangxi.github.io/pkb/">个人知识库</a></li>
                         
                     </ul>
                 </nav>
@@ -93,6 +95,8 @@
                     <ul id="search_list" style="display: none;" onmouseover="document.getElementById('search_input').removeAttribute('onblur')"
                     onmouseout="document.getElementById('search_input').setAttribute('onblur','close_search()')">
                         <!-- 
+                        <a title="Jekyll中使用AngularJS" href="/notes/category/碎笔/Jekyll中使用AngularJS/"><li>Jekyll中使用AngularJS</li></a>
+                        
                         <a title="C语言下如何使用Libxml2进行Xml文件解析" href="/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/"><li>C语言下如何使用Libxml2进行Xml文件解析</li></a>
                         
                         <a title="GObject定义对象" href="/notes/category/编程语言/C/GObject定义对象/"><li>GObject定义对象</li></a>
@@ -133,7 +137,7 @@
 
             <script type="text/javascript">
                 window.onload = function(){
-                    axios.get("/data/worknotes-list.json")
+                    axios.get("/worknotes/data/worknotes-list.json")
                     .then(function(response){
                         // console.log(response)
                         // console.log(typeof(response.data))
@@ -217,7 +221,7 @@
                                 var item_string = "";
                                 for(var i=0; i< result.length; i++){
                                     // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                    item_string += '<a title="'+result[i].title+'" href='+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                    item_string += '<a title="'+result[i].title+'" href=/worknotes'+result[i].url+'><li>'+result[i].title+'</li></a>'
                                 }
 
                                 obj.innerHTML = item_string;
@@ -253,7 +257,7 @@
             <div class="widgets-container">
                 <!-- <div class="widgets-article-count">
                     <div class="article-count-mate">至今共发布
-                        <span class="article-count-num">15</span>篇文章
+                        <span class="article-count-num">16</span>篇文章
                     </div>
                 </div>
                 <div class="widgets-slogan">
@@ -269,7 +273,7 @@
                         </div>
                         <div class="content">
                             WorkNotes 是一个个人记录与工作技能相关信息相关的网站。以便在以后的工作中遇到
-                            相应的情况可以快速的进行查阅。本站至今共发布了<b>15</b>
+                            相应的情况可以快速的进行查阅。本站至今共发布了<b>16</b>
                             篇文章作品。 -- <font style="font-style:italic;">慎终如始无败事</font>
                         </div>
                     </div>
@@ -284,67 +288,67 @@
                                     
                                     
                                     <div>
-                                        <a title="👉C语言下如何使用Libxml2进行Xml文件解析" href="/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/">👉 C语言下如何使用Libxml2进行Xml文件解析</a>
+                                        <a title="👉Jekyll中使用AngularJS" href="/worknotes/notes/category/碎笔/Jekyll中使用AngularJS/">👉 Jekyll中使用AngularJS</a>
+                                        / 2020-02-18
+                                    </div>
+                                    
+                                    
+                                    <div>
+                                        <a title="👉C语言下如何使用Libxml2进行Xml文件解析" href="/worknotes/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/">👉 C语言下如何使用Libxml2进行Xml文件解析</a>
                                         / 2020-02-16
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉GObject定义对象" href="/notes/category/编程语言/C/GObject定义对象/">👉 GObject定义对象</a>
+                                        <a title="👉GObject定义对象" href="/worknotes/notes/category/编程语言/C/GObject定义对象/">👉 GObject定义对象</a>
                                         / 2020-02-11
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">👉 控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
+                                        <a title="👉控制台中输出UTF8编码的C程序中的中文信息乱码问题" href="/worknotes/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">👉 控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
                                         / 2020-02-01
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉设计模式" href="/notes/category/碎笔/设计模式">👉 设计模式</a>
+                                        <a title="👉设计模式" href="/worknotes/notes/category/碎笔/设计模式">👉 设计模式</a>
                                         / 2019-12-28
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Go语言实现观察者模式" href="/notes/category/编程语言/Go/Go语言实现观察者模式/">👉 Go语言实现观察者模式</a>
+                                        <a title="👉Go语言实现观察者模式" href="/worknotes/notes/category/编程语言/Go/Go语言实现观察者模式/">👉 Go语言实现观察者模式</a>
                                         / 2019-12-18
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Vim简单使用教程" href="/notes/category/碎笔/Vim简单使用教程">👉 Vim简单使用教程</a>
+                                        <a title="👉Vim简单使用教程" href="/worknotes/notes/category/碎笔/Vim简单使用教程">👉 Vim简单使用教程</a>
                                         / 2019-12-16
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Go语言实现单例模式" href="/notes/category/编程语言/Go/Go语言实现单例模式/">👉 Go语言实现单例模式</a>
+                                        <a title="👉Go语言实现单例模式" href="/worknotes/notes/category/编程语言/Go/Go语言实现单例模式/">👉 Go语言实现单例模式</a>
                                         / 2019-12-14
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉Go：Hello World" href="/notes/category/编程语言/Go/Go-Hello-World/">👉 Go：Hello World</a>
+                                        <a title="👉Go：Hello World" href="/worknotes/notes/category/编程语言/Go/Go-Hello-World/">👉 Go：Hello World</a>
                                         / 2019-11-06
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉初识 Common Lisp" href="/notes/category/编程语言/common-lisp/初识-Common-Lisp/">👉 初识 Common Lisp</a>
+                                        <a title="👉初识 Common Lisp" href="/worknotes/notes/category/编程语言/common-lisp/初识-Common-Lisp/">👉 初识 Common Lisp</a>
                                         / 2019-10-31
                                     </div>
                                     
                                     
                                     <div>
-                                        <a title="👉配置中心：Spring Cloud Config" href="/notes/category/Spring/配置中心-Spring-Cloud-Config-Server">👉 配置中心：Spring Cloud Config</a>
-                                        / 2019-10-24
-                                    </div>
-                                    
-                                    
-                                    <div>
-                                        <a title="👉服务注册与发现：Sprint Cloud Eureka" href="/notes/category/Spring/服务注册与发现-Sprint-Cloud-Eureka/">👉 服务注册与发现：Sprint Cloud Eureka</a>
+                                        <a title="👉配置中心：Spring Cloud Config" href="/worknotes/notes/category/Spring/配置中心-Spring-Cloud-Config-Server">👉 配置中心：Spring Cloud Config</a>
                                         / 2019-10-24
                                     </div>
                                     
@@ -427,7 +431,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌碎笔" href="/notes/category/碎笔">📌碎笔</a> / 3</div> 
+                                    <div><a title="📌碎笔" href="/worknotes/notes/category/碎笔">📌碎笔</a> / 4</div> 
                                     
                                     
                                     
@@ -496,7 +500,12 @@
                                     
                                         
                                     
-                                    <div><a title="📌Ada" href="/notes/category/编程语言/Ada">📌Ada</a> / 1</div> 
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <div><a title="📌Ada" href="/worknotes/notes/category/编程语言/Ada">📌Ada</a> / 1</div> 
                                     
                                     
                                     
@@ -542,7 +551,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌编程语言" href="/notes/category/编程语言">📌编程语言</a> / 9</div> 
+                                    <div><a title="📌编程语言" href="/worknotes/notes/category/编程语言">📌编程语言</a> / 9</div> 
                                     
                                     
                                     
@@ -614,7 +623,12 @@
                                     
                                         
                                     
-                                    <div><a title="📌Go" href="/notes/category/编程语言/Go">📌Go</a> / 4</div> 
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <div><a title="📌Go" href="/worknotes/notes/category/编程语言/Go">📌Go</a> / 4</div> 
                                     
                                     
                                     
@@ -655,7 +669,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌算法" href="/notes/category/算法">📌算法</a> / 1</div> 
+                                    <div><a title="📌算法" href="/worknotes/notes/category/算法">📌算法</a> / 1</div> 
                                     
                                     
                                     
@@ -670,7 +684,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌Spring" href="/notes/category/Spring">📌Spring</a> / 2</div> 
+                                    <div><a title="📌Spring" href="/worknotes/notes/category/Spring">📌Spring</a> / 2</div> 
                                     
                                     
                                     
@@ -680,7 +694,7 @@
                                         
                                             
                                             
-                                    <div><a title="📌微服务" href="/notes/category/微服务/">📌微服务</a> / 2</div> 
+                                    <div><a title="📌微服务" href="/worknotes/notes/category/微服务/">📌微服务</a> / 2</div> 
                                     
                                     
                                     
@@ -758,7 +772,12 @@
                                     
                                         
                                     
-                                    <div><a title="📌CommonLisp" href="/notes/category/编程语言/CommonLisp">📌CommonLisp</a> / 1</div> 
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <div><a title="📌CommonLisp" href="/worknotes/notes/category/编程语言/CommonLisp">📌CommonLisp</a> / 1</div> 
                                     
                                     
                                     
@@ -821,7 +840,12 @@
                                     
                                         
                                     
-                                    <div><a title="📌C" href="/notes/category/编程语言/C">📌C</a> / 3</div> 
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <div><a title="📌C" href="/worknotes/notes/category/编程语言/C">📌C</a> / 3</div> 
                                     
                                     
                                     
@@ -909,7 +933,7 @@
                                         
                                             
                                             
-                                    <a title="碎笔" href="/notes/category/碎笔">碎笔</a>
+                                    <a title="碎笔" href="/worknotes/notes/category/碎笔">碎笔</a>
                                     ·
                                     
                                     
@@ -979,7 +1003,12 @@
                                     
                                         
                                     
-                                    <a title="Ada" href="/notes/category/编程语言/Ada">Ada</a>
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <a title="Ada" href="/worknotes/notes/category/编程语言/Ada">Ada</a>
                                     ·
                                     
                                     
@@ -1026,7 +1055,7 @@
                                         
                                             
                                             
-                                    <a title="编程语言" href="/notes/category/编程语言">编程语言</a>
+                                    <a title="编程语言" href="/worknotes/notes/category/编程语言">编程语言</a>
                                     ·
                                     
                                     
@@ -1099,7 +1128,12 @@
                                     
                                         
                                     
-                                    <a title="Go" href="/notes/category/编程语言/Go">Go</a>
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <a title="Go" href="/worknotes/notes/category/编程语言/Go">Go</a>
                                     ·
                                     
                                     
@@ -1141,7 +1175,7 @@
                                         
                                             
                                             
-                                    <a title="算法" href="/notes/category/算法">算法</a>
+                                    <a title="算法" href="/worknotes/notes/category/算法">算法</a>
                                     ·
                                     
                                     
@@ -1157,7 +1191,7 @@
                                         
                                             
                                             
-                                    <a title="Spring" href="/notes/category/Spring">Spring</a>
+                                    <a title="Spring" href="/worknotes/notes/category/Spring">Spring</a>
                                     ·
                                     
                                     
@@ -1168,7 +1202,7 @@
                                         
                                             
                                             
-                                    <a title="微服务" href="/notes/category/微服务/">微服务</a>
+                                    <a title="微服务" href="/worknotes/notes/category/微服务/">微服务</a>
                                     ·
                                     
                                     
@@ -1247,7 +1281,12 @@
                                     
                                         
                                     
-                                    <a title="CommonLisp" href="/notes/category/编程语言/CommonLisp">CommonLisp</a>
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <a title="CommonLisp" href="/worknotes/notes/category/编程语言/CommonLisp">CommonLisp</a>
                                     ·
                                     
                                     
@@ -1311,7 +1350,12 @@
                                     
                                         
                                     
-                                    <a title="C" href="/notes/category/编程语言/C">C</a>
+                                        
+                                        
+                                    
+                                        
+                                    
+                                    <a title="C" href="/worknotes/notes/category/编程语言/C">C</a>
                                     
                                     
                                     
@@ -1319,52 +1363,52 @@
                             <div>
                                 标签：
                                 
-                                    <a title="设计模式" href="/notes/tag/设计模式">设计模式</a>
+                                    <a title="设计模式" href="/worknotes/notes/tag/设计模式">设计模式</a>
                                     ·
                                 
-                                    <a title="单例模式" href="/notes/tag/单例模式">单例模式</a>
+                                    <a title="单例模式" href="/worknotes/notes/tag/单例模式">单例模式</a>
                                     ·
                                 
-                                    <a title="创建型模式" href="/notes/tag/创建型模式">创建型模式</a>
+                                    <a title="创建型模式" href="/worknotes/notes/tag/创建型模式">创建型模式</a>
                                     ·
                                 
-                                    <a title="Ada" href="/notes/tag/Ada">Ada</a>
+                                    <a title="Ada" href="/worknotes/notes/tag/Ada">Ada</a>
                                     ·
                                 
-                                    <a title="Go" href="/notes/tag/Go">Go</a>
+                                    <a title="Go" href="/worknotes/notes/tag/Go">Go</a>
                                     ·
                                 
-                                    <a title="LeetCode" href="/notes/tag/LeetCode">LeetCode</a>
+                                    <a title="LeetCode" href="/worknotes/notes/tag/LeetCode">LeetCode</a>
                                     ·
                                 
-                                    <a title="微服务" href="/notes/tag/微服务">微服务</a>
+                                    <a title="微服务" href="/worknotes/notes/tag/微服务">微服务</a>
                                     ·
                                 
-                                    <a title="服务探索" href="/notes/tag/服务探索">服务探索</a>
+                                    <a title="服务探索" href="/worknotes/notes/tag/服务探索">服务探索</a>
                                     ·
                                 
-                                    <a title="配置中心" href="/notes/tag/配置中心">配置中心</a>
+                                    <a title="配置中心" href="/worknotes/notes/tag/配置中心">配置中心</a>
                                     ·
                                 
-                                    <a title="CommonLisp" href="/notes/tag/CommonLisp">CommonLisp</a>
+                                    <a title="CommonLisp" href="/worknotes/notes/tag/CommonLisp">CommonLisp</a>
                                     ·
                                 
-                                    <a title="vim" href="/notes/tag/vim">vim</a>
+                                    <a title="vim" href="/worknotes/notes/tag/vim">vim</a>
                                     ·
                                 
-                                    <a title="观察者模式" href="/notes/tag/观察者模式">观察者模式</a>
+                                    <a title="观察者模式" href="/worknotes/notes/tag/观察者模式">观察者模式</a>
                                     ·
                                 
-                                    <a title="行为模式" href="/notes/tag/行为模式">行为模式</a>
+                                    <a title="行为模式" href="/worknotes/notes/tag/行为模式">行为模式</a>
                                     ·
                                 
-                                    <a title="C" href="/notes/tag/C">C</a>
+                                    <a title="C" href="/worknotes/notes/tag/C">C</a>
                                     ·
                                 
-                                    <a title="其他" href="/notes/tag/其他">其他</a>
+                                    <a title="其他" href="/worknotes/notes/tag/其他">其他</a>
                                     ·
                                 
-                                    <a title="GLib" href="/notes/tag/GLib">GLib</a>
+                                    <a title="GLib" href="/worknotes/notes/tag/GLib">GLib</a>
                                     
                                 
                             </div>
@@ -1391,7 +1435,7 @@
                         </div>
                         <div class="content" style="text-align: center;">
                             <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
-                                <img alt="知识共享许可协议" style="border-width:0" src="/assets/images/license-80x15.png" />
+                                <img alt="知识共享许可协议" style="border-width:0" src="/worknotes/assets/images/license-80x15.png" />
                                 <!-- <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" /> -->
                             </a><br />本网站所有作品均采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可。
                         </div>
@@ -1412,18 +1456,18 @@
     </body>
     <!-- bootstrup script -->
 
-<script src="/assets/scripts/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
-<script src="/assets/scripts/lib/popper.min.js"  crossorigin="anonymous"></script>
-<script src="/assets/scripts/lib/bootstrap.min.js" crossorigin="anonymous"></script>
-<script src="/assets/scripts/lib/jquery.nicescroll.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
 
 
-<script src="/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
+<script src="/worknotes/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
 
-<script src="/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
+<script src="/worknotes/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
 
 <!-- end bootstrup script -->
-<!-- <script src="/assets/scripts/default/main.js" ></script> -->
+<!-- <script src="/worknotes/assets/scripts/default/main.js" ></script> -->
 <script>
 // $("body").niceScroll({
 //     cursorborder:"",

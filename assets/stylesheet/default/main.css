@@ -562,6 +562,10 @@ a:hover{
     list-style-type: disc;
 }
 
+.content p{
+    margin-bottom: 0.65rem;
+}
+
 .content ul li:first-child,
 .content ol li:first-child{
     margin-top: -1.65rem;
