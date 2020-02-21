@@ -43,7 +43,21 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="subpanel">
+                            <div class="inner">
+                                <div class="header default-bg-color">
+                                    推荐列表
+                                </div>
+                                <div class="content">
+                                    {% for recommended in site.data.recommended %}
+                                    {% assign np = site.posts | where: "title", recommended.title | first %} 
+                                    
+                                        <!-- jsonify -->
+                                        <div><a title="{{np.title}}" href="{{np.url}}">{{np.title}}</a> / 推荐指数：{% for i in (0..recommended.exponent) %}💛{% endfor %}</div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
                         <div class="subpanel">
                             <div class="inner">
                                 <div class="header default-bg-color">
@@ -77,6 +91,9 @@
                                 </div>
                             </div>
                         </div>
+
+
+                        
                     </div>
                 </div>
 

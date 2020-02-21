@@ -29,6 +29,23 @@ body{
     background: var(--white);
 }
 
+blockquote{
+    display: flex;
+    flex-flow: inherit;
+}
+blockquote p{
+    font-weight: 900;
+}
+
+blockquote::before{
+    content: " ";
+    background-color: #e7e7e7;
+    max-width: 4px;
+    min-width: 4px;
+    margin-bottom: 0.65rem;
+    margin-right: 0.65rem;
+}
+
 header{
     padding-top: 21px;
     margin-bottom: 30px;

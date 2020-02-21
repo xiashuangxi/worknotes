@@ -23,7 +23,7 @@
 <meta name="twitter:site" content="@nytimesbits" />
 <meta name="twitter:creator" content="@nickbilton" />
 
-<link rel="shortcut icon" type="image/ico" href="/worknotes/assets/favicon/favicon.ico" />
+<link rel="shortcut icon" type="image/ico" href="/assets/favicon/favicon.ico" />
 <meta name="msvalidate.01" content="5369E33A969777C6DEEDF11A4B45CE5A" />
 <meta name="google-site-verification" content="3fgcxcUt1mLPMwubgCzeBfjtoP1A3ubCfYg8FT4C0Bs" />
 <title>
@@ -31,16 +31,16 @@
 </title>
 <!-- bootstrup stylesheet -->
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="/assets/stylesheet/lib/bootstrap.min.css" crossorigin="anonymous">
 
 <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 <!-- end bootstrup stylesheet -->
 
 <!-- custom -->
-<link rel="stylesheet" href="/worknotes/assets/stylesheet/default/main.css" />
+<link rel="stylesheet" href="/assets/stylesheet/default/main.css" />
 
 
-    <link rel="stylesheet" href="/worknotes/assets/stylesheet/default/colors/colors-rbw.css" />
+    <link rel="stylesheet" href="/assets/stylesheet/default/colors/colors-rbw.css" />
 
 
 
@@ -56,8 +56,8 @@
 <div id="header-container"   style="height: calc(var(--header-height) + var(--sub-menu))"  >
     <header id="header-compact-v1" class="should-stick">
         <div class="header-inner">
-            <a href="/worknotes" title="Work Notes" class="site-logo">
-                <!-- <img src="/worknotes/assets/favicon/favicon.png"/> -->
+            <a href="/" title="Work Notes" class="site-logo">
+                <!-- <img src="/assets/favicon/favicon.png"/> -->
                 <div style="padding-right: 2px; font-size: 18px; color: var(--black); font-weight: 900;">Work</div>
                 <div style="padding-left: 2px; font-size: 18px; color: var(--white); font-weight: 900;">Notes</div>
             </a>
@@ -65,23 +65,25 @@
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         
-                            <li><a href="/worknotes/notes/category/微服务/">微服务</a></li>
+                            <li><a href="/notes/category/微服务/">微服务</a></li>
                         
-                            <li><a href="/worknotes/notes/category/Spring">Spring</a></li>
+                            <li><a href="/notes/category/Spring">Spring</a></li>
                         
-                            <li><a href="/worknotes/notes/category/Redis">Redis</a></li>
+                            <li><a href="/notes/category/Redis">Redis</a></li>
                         
-                            <li><a href="/worknotes/notes/category/消息队列">消息队列</a></li>
+                            <li><a href="/notes/category/消息队列">消息队列</a></li>
                         
-                            <li><a href="/worknotes/notes/category/算法">算法</a></li>
+                            <li><a href="/notes/category/算法">算法</a></li>
                         
-                            <li><a href="/worknotes/notes/category/编程语言">编程语言</a></li>
+                            <li><a href="/notes/category/编程语言">编程语言</a></li>
                         
-                            <li><a href="/worknotes/notes/category/碎笔">碎笔</a></li>
+                            <li><a href="/notes/category/碎笔">碎笔</a></li>
                         
-                            <li><a href="/worknotes/notes/category/面试问题">面试问题</a></li>
+                            <li><a href="https://xiashuangxi.github.io/pkb/">个人知识库</a></li>
                         
-                            <li><a href="/worknoteshttps://xiashuangxi.github.io/pkb/">个人知识库</a></li>
+                            <li><a href="https://www.github.io/xiashuangxi/">个人代码库</a></li>
+                        
+                            <li><a href="https://app.cacher.io/">个人代码片段库</a></li>
                         
                     </ul>
                 </nav>
@@ -95,6 +97,12 @@
                     <ul id="search_list" style="display: none;" onmouseover="document.getElementById('search_input').removeAttribute('onblur')"
                     onmouseout="document.getElementById('search_input').setAttribute('onblur','close_search()')">
                         <!-- 
+                        <a title="个人工具箱" href="/notes/category/碎笔/个人工具箱"><li>个人工具箱</li></a>
+                        
+                        <a title="Jekyll中生成Json数据" href="/notes/category/碎笔/Jekyll中生成Json数据/"><li>Jekyll中生成Json数据</li></a>
+                        
+                        <a title="GLib中设置对象的属性" href="/notes/category/编程语言/C/GLib中设置对象的属性/"><li>GLib中设置对象的属性</li></a>
+                        
                         <a title="Jekyll中使用AngularJS" href="/notes/category/碎笔/Jekyll中使用AngularJS/"><li>Jekyll中使用AngularJS</li></a>
                         
                         <a title="C语言下如何使用Libxml2进行Xml文件解析" href="/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/"><li>C语言下如何使用Libxml2进行Xml文件解析</li></a>
@@ -137,7 +145,7 @@
 
             <script type="text/javascript">
                 window.onload = function(){
-                    axios.get("/worknotes/data/worknotes-list.json")
+                    axios.get("/data/worknotes-list.json")
                     .then(function(response){
                         // console.log(response)
                         // console.log(typeof(response.data))
@@ -221,7 +229,7 @@
                                 var item_string = "";
                                 for(var i=0; i< result.length; i++){
                                     // onmouseout="this.removeAttribute(\'class\')" onmouseover="this.setAttribute(\'class\',\'active\')"
-                                    item_string += '<a title="'+result[i].title+'" href=/worknotes'+result[i].url+'><li>'+result[i].title+'</li></a>'
+                                    item_string += '<a title="'+result[i].title+'" href='+result[i].url+'><li>'+result[i].title+'</li></a>'
                                 }
 
                                 obj.innerHTML = item_string;
@@ -247,17 +255,17 @@
         <div class="site-nav-container-submenu">
             <ul>
                 
-                <li><a href="/worknotes/notes/category/编程语言/C">C</a></li> 
+                <li><a href="/notes/category/编程语言/Ada">Ada</a></li> 
                 
-                <li><a href="/worknotes/notes/category/编程语言/Java">Java</a></li> 
+                <li><a href="/notes/category/编程语言/C">C</a></li> 
                 
-                <li><a href="/worknotes/notes/category/编程语言/Ada">Ada</a></li> 
+                <li><a href="/notes/category/编程语言/CommonLisp">common lisp</a></li> 
                 
-                <li><a href="/worknotes/notes/category/编程语言/Go">Go</a></li> 
+                <li><a href="/notes/category/编程语言/Go">Go</a></li> 
                 
-                <li><a href="/worknotes/notes/category/编程语言/Python">Python</a></li> 
+                <li><a href="/notes/category/编程语言/Java">Java</a></li> 
                 
-                <li><a href="/worknotes/notes/category/编程语言/CommonLisp">common lisp</a></li> 
+                <li><a href="/notes/category/编程语言/Python">Python</a></li> 
                 
             </ul>
         </div>
@@ -282,7 +290,27 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/">C语言下如何使用Libxml2进行Xml文件解析</a>
+                                            <a class="title-container" href="/notes/category/编程语言/C/GLib中设置对象的属性/">GLib中设置对象的属性</a>
+                                        </h4>
+                                        <div class="author">Xia Shuangxi</div>
+                                        <div class="intro">在 GLib 中我们如何在客户端创建对象时给对象的属性设置初始值。我们如何在 g_object_new() 时给对象设置初始值呢？像这样
+g_object_new(TYPE_DEMO, "name", "tom", NULL);
+
+
+</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                
+                    <li class="item">
+                        <div class="works-item-container">
+                            <div class="works-item">
+                                <div class="inner">
+                                    <div class="info">
+                                        <h4 class="title">
+                                            <a class="title-container" href="/notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/">C语言下如何使用Libxml2进行Xml文件解析</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">Libxml2 是用于 C 语言下的一个 XML 解析器，它是属于 Gnome 项目的一个开发工具包，但
@@ -301,7 +329,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/C/GObject定义对象/">GObject定义对象</a>
+                                            <a class="title-container" href="/notes/category/编程语言/C/GObject定义对象/">GObject定义对象</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">在 GObject 下定义一个对象，每个对象必须定义两个结构：类结构和实例结构。所有的类都
@@ -321,7 +349,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
+                                            <a class="title-container" href="/notes/category/编程语言/C/控制台中输出UTF8编码的C程序中的中文信息乱码问题/">控制台中输出UTF8编码的C程序中的中文信息乱码问题</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">当你的 C 程序是使用 UTF-8 编码的，其中输出的中文信息可能会出现乱码问题。
@@ -339,7 +367,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/Go/Go语言实现观察者模式/">Go语言实现观察者模式</a>
+                                            <a class="title-container" href="/notes/category/编程语言/Go/Go语言实现观察者模式/">Go语言实现观察者模式</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">观察者模式是定义对象间的一种一对多的依赖关系，当一个对象的状态发生变化时，所有依赖于它的对象都得到通知并被自动更新。
@@ -357,7 +385,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/Go/Go语言实现单例模式/">Go语言实现单例模式</a>
+                                            <a class="title-container" href="/notes/category/编程语言/Go/Go语言实现单例模式/">Go语言实现单例模式</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">单例模式简单来说就是确保在一个程序中只存在一个类型的实例，并提该对象的全局访问点。
@@ -375,7 +403,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/Go/Go-Hello-World/">Go：Hello World</a>
+                                            <a class="title-container" href="/notes/category/编程语言/Go/Go-Hello-World/">Go：Hello World</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">这里我们开始 Go 的编程之旅。让我们开始编写我们的第一个程序。
@@ -393,7 +421,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/common-lisp/初识-Common-Lisp/">初识 Common Lisp</a>
+                                            <a class="title-container" href="/notes/category/编程语言/common-lisp/初识-Common-Lisp/">初识 Common Lisp</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">Hello world!
@@ -412,7 +440,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/Go/Go-安装与环境设置/">Go 安装与环境设置</a>
+                                            <a class="title-container" href="/notes/category/编程语言/Go/Go-安装与环境设置/">Go 安装与环境设置</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">Go 也称为 Golang，是 Google 开发的一种开源，编译和静态类型的编程语言。Go 是一个语法简单的通用编程语言，并具有强大的标准库作为支持。Go最合适的领域之一是创建高可用和高可伸缩性的 Web 应用程序。Go 还可以用于创建命令行应用程序，桌面应用程序甚至移动应用程序。
@@ -430,7 +458,7 @@
                                 <div class="inner">
                                     <div class="info">
                                         <h4 class="title">
-                                            <a class="title-container" href="/worknotes/notes/category/编程语言/Ada/初识-Ada/">初识 Ada</a>
+                                            <a class="title-container" href="/notes/category/编程语言/Ada/初识-Ada/">初识 Ada</a>
                                         </h4>
                                         <div class="author">Xia Shuangxi</div>
                                         <div class="intro">初识 Ada
@@ -459,18 +487,18 @@
     </body>
     <!-- bootstrup script -->
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+<script src="/assets/scripts/lib/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/popper.min.js"  crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/jquery.nicescroll.js" crossorigin="anonymous"></script>
 
 
-<script src="/worknotes/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/fuse.js" crossorigin="anonymous"></script>
 
-<script src="/worknotes/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
+<script src="/assets/scripts/lib/axios.min.js" crossorigin="anonymous"></script>
 
 <!-- end bootstrup script -->
-<!-- <script src="/worknotes/assets/scripts/default/main.js" ></script> -->
+<!-- <script src="/assets/scripts/default/main.js" ></script> -->
 <script>
 // $("body").niceScroll({
 //     cursorborder:"",
