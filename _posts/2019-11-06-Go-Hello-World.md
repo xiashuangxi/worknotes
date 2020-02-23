@@ -3,7 +3,8 @@ layout: post
 title: Go：Hello World
 category: [Go, 编程语言]
 tag: Go
-permalink: /notes/category/编程语言/Go/Go-Hello-World/
+# permalink: /notes/category/编程语言/Go/Go-Hello-World/
+permalink: /Title::title
 ---
 这里我们开始 Go 的编程之旅。让我们开始编写我们的第一个程序。
 

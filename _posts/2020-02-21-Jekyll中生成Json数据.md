@@ -3,7 +3,8 @@ layout: post
 title: Jekyll中生成Json数据
 category: 碎笔
 tag: [其他]
-permalink: /notes/category/碎笔/Jekyll中生成Json数据/
+# permalink: /notes/category/碎笔/Jekyll中生成Json数据/
+permalink: /Title::title
 ---
 我们在使用 Jekyll 建站时，经常会用到 Json 数据。如将所有的文章（_posts文件下的文章） Json 化，以供 JavaScript 使用等。
 

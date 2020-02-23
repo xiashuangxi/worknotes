@@ -3,7 +3,8 @@ layout: post
 title: C语言下如何使用Libxml2进行Xml文件解析
 category: [C,编程语言]
 tag: [C ,其他]
-permalink: /notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/
+# permalink: /notes/category/编程语言/C/C语言下如何使用Libxml2进行Xml文件解析/
+permalink: /Title::title
 ---
 Libxml2 是用于 C 语言下的一个 XML 解析器，它是属于 Gnome 项目的一个开发工具包，但
 也可以在 Gome 平台之外使用。

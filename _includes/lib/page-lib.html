@@ -1,0 +1,26 @@
+{% include setup.html %}
+{% capture pageWorkspace %}
+    {% comment %}
+        Version 1.0.9
+          
+        Usage:
+            {% include page.html title=xxx %}
+
+        Parameters:
+            * title         (string) - 页面的标题
+
+        Output:
+            一个页面的 URL
+    {% endcomment %}
+
+    {% capture my_page %}{% endcapture %}
+
+    {% assign title = include.title | default: "/" %}
+
+    {% for page in site.posts %}
+        {% if page.title == title %}
+            {% assign page_url = namespace | append: page.url %}
+        {% endif %}
+    {% endfor %}
+    
+{% endcapture %}{% assign pageWorkspace = '' %}{{ page_url }}

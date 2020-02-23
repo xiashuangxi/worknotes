@@ -1,7 +1,8 @@
 worknotes:
-  develop: pro
+  develop: dev
   slogin: 慎终如始无败事
-  namespace: worknotes
   author: Xia Shuangxi
   title: Work Notes
+  namespace: worknotes
   new_add_list_count: 10
+

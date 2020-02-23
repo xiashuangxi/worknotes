@@ -3,7 +3,8 @@ layout: post
 title: 配置中心：Spring Cloud Config 
 category: [Spring,微服务]
 tag: [微服务,配置中心]
-permalink: /notes/category/Spring/配置中心-Spring-Cloud-Config-Server
+# permalink: /notes/category/Spring/配置中心-Spring-Cloud-Config-Server
+permalink: /Title::title
 ---
 当我们的应用程序越来越庞大，服务实例将会成倍的增长，当服务实例的量增加到几千上万个的时候，那个时候就不适用于在服务实例中维护配置信息了，那个时候维护这些配置信息将是一个非常艰难的工作。为了避免这种问题，我们需要在一个地方统一管理这些配置信息。Spring Cloud 为我们提供了一种解决方案 Config Server 和 Config Client 。
 

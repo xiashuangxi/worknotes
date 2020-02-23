@@ -1,47 +1,44 @@
 - name: 微服务
-  url: /notes/category/微服务/
+  url: /Category:微服务
 
 - name: Spring
-  url: /notes/category/Spring
+  url: /Category:Spring
 
 - name: Redis
-  url: /notes/category/Redis
+  url: /Category:Redis
 
 - name: 消息队列
-  url: /notes/category/消息队列
+  url: /Category:消息队列
   item: 
   - name: kafka
-    url: /notes/category/消息队列/kafka
+    url: /消息队列:kafka
   - name: RabbitMQ
-    url: /notes/category/消息队列/RabbitMQ
+    url: /消息队列:RabbitMQ
   - name: RocketMQ
-    url: /notes/category/消息队列/RocketMQ
+    url: /消息队列:RocketMQ
 
 - name: 算法
-  url: /notes/category/算法
+  url: /Category:算法
 
 - name: 编程语言
-  url: /notes/category/编程语言
+  url: /Category:编程语言
   item: 
   - name: Ada
-    url: /notes/category/编程语言/Ada
+    url: /编程语言:Ada
   - name: C
-    url: /notes/category/编程语言/C
+    url: /编程语言:C
   - name: common lisp
-    url: /notes/category/编程语言/CommonLisp
+    url: /编程语言:CommonLisp
   - name: Go
-    url: /notes/category/编程语言/Go
+    url: /编程语言:Go
   - name: Java
-    url: /notes/category/编程语言/Java
+    url: /编程语言:Java
   - name: Python
-    url: /notes/category/编程语言/Python
+    url: /编程语言:Python
 
 
 - name: 碎笔
-  url: /notes/category/碎笔
-
-# - name: 面试问题
-#   url: /notes/category/面试问题
+  url: /Category:碎笔
 
 - name: 个人知识库
   url: https://xiashuangxi.github.io/pkb/

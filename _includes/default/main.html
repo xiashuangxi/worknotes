@@ -33,13 +33,13 @@
                             <div class="inner">
                                 <div class="header default-bg-color">最新发布的文章</div>
                                 <div class="content">
-                                    {% for index in (0..site.data.application.worknotes.new_add_list_count) %}
-                                    {% assign p = site.posts[index] %}
+                                    {% assign posts = site.posts | order: 'date' | slice:0, site.data.application.worknotes.new_add_list_count %}
+                                    {% for p in posts %}
                                     <div>
                                         <a title="👉{{p.title}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{p.url}}">👉 {{p.title}}</a>
                                         / {{p.date | date:"%Y-%m-%d"}}
                                     </div>
-                                    {% endfor%}
+                                    {% endfor %}
                                 </div>
                             </div>
                         </div>
@@ -68,7 +68,7 @@
                                     {% assign c = category | first %}
                                     
                                     {% for m in site.data.menu %}
-                                        {% assign ut = m.url | split: "/" | last %}
+                                        {% assign ut = m.url | split: ":" | last %}
                                         {% if ut == c %}
                                             {% assign url = m.url %}
                                             {% break %}
@@ -76,7 +76,7 @@
                                     
                                         {% if m.item %}
                                             {% for sm in m.item  %}
-                                            {% assign ut = sm.url | split: "/" | last %}
+                                            {% assign ut = sm.url | split: ":" | last %}
                                                 {% if ut == c %}
                                                     {% assign url = sm.url %}
                                                     {% break %}
@@ -87,6 +87,7 @@
                                     <div><a title="📌{{c}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{url}}">📌{{c}}</a> / {{ category | last | size }}</div> 
                                     {% assign url = # %}
                                     {% endfor %}
+
                                     
                                 </div>
                             </div>
@@ -110,7 +111,7 @@
                                     {% assign c = category | first %}
                                     
                                     {% for m in site.data.menu %}
-                                        {% assign ut = m.url | split: "/" | last %}
+                                        {% assign ut = m.url | split: ":" | last %}
                                         {% if ut == c %}
                                             {% assign url = m.url %}
                                             {% break %}
@@ -118,7 +119,7 @@
                                     
                                         {% if m.item %}
                                             {% for sm in m.item  %}
-                                            {% assign ut = sm.url | split: "/" | last %}
+                                            {% assign ut = sm.url | split: ":" | last %}
                                                 {% if ut == c %}
                                                     {% assign url = sm.url %}
                                                     {% break %}
@@ -134,7 +135,7 @@
                             <div>
                                 标签：
                                 {% for tag in site.tags %}
-                                    <a title="{{tag | first}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}/notes/tag/{{tag | first}}">{{tag | first}}</a>
+                                    <a title="{{tag | first}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}/Tag:{{tag | first}}">{{tag | first}}</a>
                                     {% if forloop.last == false%}·{% endif %}
                                 {% endfor %}
                             </div>

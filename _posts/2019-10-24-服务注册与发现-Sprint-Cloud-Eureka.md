@@ -3,7 +3,8 @@ layout: post
 title: 服务注册与发现：Sprint Cloud Eureka 
 category: [Spring,微服务]
 tag: [微服务,服务探索]
-permalink: /notes/category/Spring/服务注册与发现-Sprint-Cloud-Eureka/
+# permalink: /notes/category/Spring/服务注册与发现-Sprint-Cloud-Eureka/
+permalink: /Title::title
 ---
 Spring Cloud Netflix Eureka 是属于 Netflix 的开源软件一款提供服务注册与发现的产品，它提供了完整的服务注册与发现实现。
 
