@@ -20,6 +20,10 @@
     background-color: #E6F2FF;
 }
 
+.bg-color-warning{
+    background-color: #ffc107;
+}
+
 body{
     font: 12px/1.5 'Helvetica Neue',Helvetica,'Lucida Grande','Luxi Sans',Arial,'PingFang SC','Hiragino Sans GB',STHeiti,'Microsoft YaHei','Wenquanyi Micro Hei','WenQuanYi Micro Hei Mono','WenQuanYi Zen Hei','WenQuanYi Zen Hei Mono',LiGothicMed;
     color: var(--black);
