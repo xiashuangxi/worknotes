@@ -35,6 +35,8 @@
     url: /编程语言:Java
   - name: Python
     url: /编程语言:Python
+  - name: Rust
+    url: /编程语言:Rust
 
 
 - name: 碎笔
