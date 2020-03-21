@@ -53,7 +53,7 @@
                                     {% assign np = site.posts | where: "title", recommended.title | first %} 
                                     
                                         <!-- jsonify -->
-                                        <div><a title="{{np.title}}" href="{{np.url}}">{{np.title}}</a> / 推荐指数：{% for i in (0..recommended.exponent) %}💛{% endfor %}</div>
+                                        <div><a title="{{np.title}}" href="{% if namespace != nil %}/{{namespace}}{% endif %}{{np.url}}">{{np.title}}</a> / 推荐指数：{% for i in (0..recommended.exponent) %}💛{% endfor %}</div>
                                     {% endfor %}
                                 </div>
                             </div>

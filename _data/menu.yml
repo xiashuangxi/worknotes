@@ -43,10 +43,19 @@
   url: /Category:碎笔
 
 - name: 个人知识库
-  url: https://xiashuangxi.github.io/pkb/
+  url: /Category:个人知识库
+  item: 
+  - name: 个人 Wiki
+    target: _block
+    url: https://xiashuangxi.github.io/pkb
+  - name: 雀语
+    target: _block
+    url: https://www.yuque.com/
 
 - name: 个人代码库
+  target: _block
   url: https://www.github.io/xiashuangxi/
 
 - name: 个人代码片段库
+  target: _block
   url: https://app.cacher.io/
