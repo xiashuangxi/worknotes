@@ -47,15 +47,19 @@
   item: 
   - name: 个人知识库
     target: _block
+    type: external
     url: https://xiashuangxi.github.io/pkb
   - name: 雀语
     target: _block
+    type: external
     url: https://www.yuque.com/
 
 - name: 个人代码库
   target: _block
+  type: external
   url: https://www.github.io/xiashuangxi/
 
 - name: 个人代码片段库
   target: _block
+  type: external
   url: https://app.cacher.io/

@@ -13,7 +13,14 @@
                 <nav class="site-nav site-nav-original" >
                     <ul>
                         {% for menu in site.data.menu %}
-                            <li><a {% if menu.target %}target="{{ menu.target }}" {% endif %} href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li>
+                            <li><a {% if menu.target %}target="{{ menu.target }}" {% endif %}
+                                href="
+                                {% if menu.type == 'external' %}
+                                {{ menu.url }}
+                                {% else %}
+                                {% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}
+                                {% endif %}
+                            ">{{ menu.name }}</a></li>
                         {% endfor %}
                     </ul>
                 </nav>
@@ -149,7 +156,14 @@
         <div class="site-nav-container-submenu">
             <ul>
                 {% for menu in menuobj.item %}
-                <li><a {% if menu.target %}target="{{ menu.target }}" {% endif %} href="{% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}">{{ menu.name }}</a></li> 
+                <li><a {% if menu.target %}target="{{ menu.target }}" {% endif %} 
+                    href="
+                    {% if menu.type == 'external' %}
+                    {{ menu.url }}
+                    {% else %}
+                    {% if namespace != nil %}/{{namespace}}{% endif %}{{ menu.url }}
+                    {% endif %}
+                ">{{ menu.name }}</a></li> 
                 {% endfor %}
             </ul>
         </div>
