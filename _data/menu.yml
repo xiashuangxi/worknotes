@@ -45,7 +45,7 @@
 - name: 个人知识库
   url: /Category:个人知识库
   item: 
-  - name: 个人 Wiki
+  - name: 个人知识库
     target: _block
     url: https://xiashuangxi.github.io/pkb
   - name: 雀语
